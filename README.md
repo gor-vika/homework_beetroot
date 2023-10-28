@@ -1,2 +1,2 @@
 # My homeworks
-Click [here] to see my homeworks(https://gor-vika.github.io/homework_beetroot/).
+To see my homeworks click [here](https://gor-vika.github.io/homework_beetroot/).
