@@ -4,49 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <style>
-        .container {
-            width: min(90%, 970px);
-            margin: 0 auto;
-        }
-        .footer_content {
-            margin: 0 auto;
-            width: min(100%, 310px);
-        }
-    </style>
+    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <div class="container">
         <nav class="header_nav">
-            <ul class="header_list">
-                <li class="header_item"><a href="#home">Home</a></li>
-                <li class="header_item"><a href="#about_me">About me</a></li>
-                <li class="header_item"><a href="#skills">Skills</a></li>
-                <li class="header_item"><a href="#portfolio">Portfolio</a></li>
-                <li class="header_item"><a href="#contacts">Contacts</a></li>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about_me">About me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contacts">Contacts</a></li>
             </ul>
         </nav>
         </div>
     </header>
     <main class="main">
-        <section id="home" class="section_white">
+        <section id="home">
             <div class="container">
             <h1 class="title">Denis Novik</h1>
-            <div class="title_content">
-                <img class="title_img" src="assets/images/main_photo.jpg" alt="main_photo">
+            <div class="title_img">
+                <img src="assets/images/main_photo.jpg" alt="main_photo">
             </div>
             </div>
         </section>
         <section id="about_me" class="section_grey">
-            <div class="container">
+            <div class="container about_me_block">
             <h2 class="subtitle">About me</h2>
-            <p class="text">Hi, I'm Denis – UX/UI designer from Minsk. I'm interested in design and everything connected with it.</p>
-            <p class="text">I'm studying at courses "Web and mobile design interfaces" in IT-Academy.</p>
-            <p class="text">Ready to implement excellent projects with wonderful people.</p>
+            <p>Hi, I'm Denis – UX/UI designer from Minsk. <br>I'm interested in design and everything connected with it.</p>
+            <p>I'm studying at courses "Web and mobile design <br>interfaces" in IT-Academy.</p>
+            <p>Ready to implement excellent project <br>with wonderful people.</p>
             </div>
         </section>
-        <section id="skills" class="section_white">
+        <!--
+        <section id="skills">
             <div class="container">
             <h2 class="subtitle">Skills</h2>
             <div class="text">I work in such programs as</div>
@@ -98,12 +93,13 @@
             </ul>
             </div>
         </section>
+        -->
         <section id="portfolio" class="section_grey">
             <div class="container">
             <h2 class="subtitle">Portfolio</h2>
             <figure class="portfolio_box">
                 <img class="portfolio_img" src="assets/images/Fashion_Store.jpg" alt="portfolio example 1">
-                <figcaption class="portfolio_caption"><a class="portfolio_link" href="#">Online fashion store - Homepage</a></figcaption>
+                <figcaption class="portfolio_caption"><a class="portfolio_link" href="#">Online fashion store - <br> Homepage</a></figcaption>
             </figure>
             <figure class="portfolio_box">
                 <img class="portfolio_img" src="assets/images/reebok_web.jpg" alt="portfolio example 2">
@@ -116,6 +112,7 @@
             </div>
         </section>
     </main>
+    <!--
     <footer id="contacts" class="footer">
         <div class="footer_content">
         <h3 class="footer_subtitle">Contacts</h3>
@@ -130,5 +127,6 @@
         <div class="footer_text">Like me on <br>LinkedIn, Instagram, Behance, Dribble</div>
         </div>
     </footer>
+    -->
 </body>
 </html>
