@@ -54,6 +54,9 @@ img{
     font-weight: 700;
     margin-bottom: 50px;
 }
+.title_img img{
+    vertical-align: top;
+}
 .section_grey {
     background-color: var(--var-light-grey-color);
     padding: 100px 0;
