@@ -181,6 +181,9 @@ line-height: 0.2
     padding: 0 40px;
     line-height: 1.35;
 }
+.btn_block{
+    margin: 0 auto 30px;
+}
 .btn{
     display: block;
     border: 0;
@@ -188,14 +191,15 @@ line-height: 0.2
     text-align: center;
     padding: 10px 16px;
     border-radius: 22px;
+    border: 1px solid var(--var-black-color);
     color: #FFF;
     background-color: var(--var-black-color);
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 1.8px;
-    margin: 0 auto 30px;
     cursor: pointer;
+    margin: 0 auto;
 }
 .btn, a{
     transition: all 0.2 ease;
