@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(210, 199, 199);
+}
+
+table{
+    margin: 150px auto;
+    width: 40%;
+}
+td{
+    width: 50%;
+}
+tr{
+    height: 30px;
+}
+.btn{
+text-align: center;
+}

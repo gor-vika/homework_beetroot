@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="assets/style/style.css">
+</head>
+<body>
+    <form action="#" method="post">
+        <table>
+            <tr>
+                <td><label for="full_name">Повне ім'я</label></td>
+                <td><input type="text" id="full_name" name="full_name" required></td>
+            </tr>
+            <tr>
+                <td> <label for="email">Email</label></td>
+                <td><input type="email" id="email" name="email" required></td>
+            </tr>
+            <tr>
+                <td><label for="">Пароль</label></td>
+                <td><input type="password" id="password" name="password" required></td>
+            </tr>
+            <tr>
+                <td><label for="password_2">Пароль ще раз</label></td>
+                <td><input type="password" id="password_2" name="password_2" required></td>
+            </tr>
+            <tr>
+                <td><label for="">Стать</label></td>
+                <td> <input type="radio" id="male" name="gender" value="male" checked>
+                    <label for="male">чоловіча</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">жіноча</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="age">Вік</label></td>
+                <td><input type="number" id="age" name="age" required></td>
+            </tr>
+            <tr>
+                <td><label for="course_select">Курс</label></td>
+                <td><select name="curses" id="course_select" required>
+                    <option value="">-=Виберіть курс=-</option>
+                    <option value="front-end">Front-end developer</option>
+                    <option value="design">UI/UX design</option>
+                    <option value="pj_managment">Project Managment</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><label for="'adress">Повна адреса</label></td>
+                <td><textarea name="adress" id="adress" required cols="30" rows="4" 
+                placeholder="Країна, регіон, місто/селище, вулиця"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" id="person_agree" name="person_agree" required>
+                    <label for="person_agree">Я погоджуюсь з обробкою персональних даних</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="btn" colspan="2">
+                    <button type="reset">Очистити форму</button>
+                    <button type="submit">Зареєструватись</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
