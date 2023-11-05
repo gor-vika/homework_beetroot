@@ -9,7 +9,7 @@ body{
 .form_row{
     margin-bottom: 15px;
 }
-.form_row label{
+.form_row label, span{
     display: inline-block;
     width: 250px;
 }
