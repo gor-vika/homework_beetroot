@@ -35,7 +35,7 @@ body{
 section{
     background-color: var(--var-color-bg);
     border: 25px solid var(--var-color-border);
-    padding: 4% 0 10%;
+    padding: 41px 0 94px;
 }
 .container{
     width: min(80%, 1166px);
@@ -124,7 +124,9 @@ ul li:nth-child(11){
 }
 .container ul:hover li{
     opacity: .2;
+    transition: all .1s ease-in;
 }
 .container ul li:hover{
     opacity: 1;
+    transition: all .1s ease-in;
 }
