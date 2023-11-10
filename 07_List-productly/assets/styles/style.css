@@ -62,10 +62,10 @@ ul{
     background-color: var(--var-color-bg);
     color: var(--var-color-text);
 }
-.container .login .btn:first-child{
+.container .btn:first-child{
     margin-right: 32px;
 }
-.container .login .btn:hover{
+.container .btn:hover{
     border: 1px solid var(--var-color-button);
     color: var(--var-color-bg);
     background-color: var(--var-color-button);
