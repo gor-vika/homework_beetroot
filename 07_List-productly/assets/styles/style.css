@@ -49,6 +49,7 @@ ul{
 }
 .container .nav li a:hover {
     color: var(--var-color-button);
+    transition: all .1s ease-in;
 }
 .btn{
     width: 110px;
@@ -62,13 +63,14 @@ ul{
     background-color: var(--var-color-bg);
     color: var(--var-color-text);
 }
-.container .btn:first-child{
+.container .login .btn:first-child{
     margin-right: 32px;
 }
-.container .btn:hover{
+.container .login .btn:hover{
     border: 1px solid var(--var-color-button);
     color: var(--var-color-bg);
     background-color: var(--var-color-button);
+    transition: all .1s ease-in;
 }
 #first-screen .container.flex{
     display: flex;
