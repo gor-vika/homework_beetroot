@@ -19,8 +19,8 @@
     src: url(../icons/font/weathericons-regular-webfont.eot),
     url(../icons/font/weathericons-regular-webfont.svg),
     url(../icons/font/weathericons-regular-webfont.ttf),
-    url(../icons/font/weathericons-regular-webfont.woff),
-    url(../icons/font/weathericons-regular-webfont.woff2);
+    url(../icons/font/weathericons-regular-webfont.woff) format(woff),
+    url(../icons/font/weathericons-regular-webfont.woff2) format(woff2);
     font-weight: 400;
 }
 *{
@@ -38,12 +38,13 @@ section{
     padding: 41px 0 94px;
 }
 .container{
-    width: min(80%, 1166px);
+    width: min(80%, 1170px);
     margin-inline: auto;
 }
 h1{
     font-size: 1.3125rem;
     margin-bottom: 37px;
+    font-weight: 400;
 }
 h1 span{
     margin-left: 4px;
@@ -71,10 +72,11 @@ ul li{
 }
 ul li span{
     display: block;
-    padding-top: 28px;
+    padding-top: 24px;
 }
 ul li i{
-    padding-bottom: 27px;
+    padding-bottom: 25px;
+    color: (255, 255, 255, 0.70);
 }
 .container li>span:not(ul li span+span){
     margin-bottom: 19px;
