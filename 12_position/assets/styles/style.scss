@@ -12,7 +12,11 @@
     margin: 0 auto;
 }
 body{
-    background: #fff url(../img/bg-picture.svg) top 150px right 0 no-repeat fixed;
+    background-color: #fff;
+    color: #000;
+}
+.wrapper{
+    background: #fff url(../img/bg-picture.svg) top 150px left 810px/760px 760px no-repeat fixed;  
 }
 .header{
     position: fixed;
