@@ -1,4 +1,5 @@
 @import 'font';
+$var-hover-overlay: rgba(36, 31, 36,1), rgba(91, 91, 91, 0.26), rgba(187,186,192,0);
 *, ::after, ::before{
     margin: 0;
     padding: 0;
@@ -16,7 +17,6 @@ body{
 }
 img{
     vertical-align: top;
-    border-radius: 20px;
     width: 100%;
     height: 100%;
 }
@@ -35,9 +35,7 @@ main{
     justify-items: center;
     &:not(:last-child){
         margin-bottom: 120px;
-    }
-
-    
+    } 
 }
 
 .colspan{
@@ -46,24 +44,39 @@ main{
 .rowspan{
     grid-row: span 2;
 }
-
+.photo-wrapper{
+    display: inline-block;
+    background: linear-gradient(360deg, #241F24 0%, rgba(91, 91, 91, 0.45) 34.11%, rgba(187, 186, 192, 0.26) 62.5%);
+    height: 100%;
+    img{
+        position: relative;
+        z-index: -1;
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+}
 .photo{
-    opacity: .9;
     transition: all .2s ease;
     position: relative;
     overflow: hidden;
-    img{
-        transition: all .2s ease;
-    }
+    width: 100%;
+    height: 100%;
+    transition: all .2s ease;
+    border-radius: 20px;
     &:hover{
-        opacity: 1;
+        border-radius: 20px;
         img{
             scale: 1.2;
         }
         .reaction{
             transform: translateY(0);
         }
+        .photo-wrapper{
+            background: linear-gradient(360deg, #241F24 1.04%, rgba(91, 91, 91, 0.26) 6.99%, rgba(187, 186, 192, 0.00) 12.29%);
+        }
     }
+    
 }
 .photo_desc{
     position: absolute;
