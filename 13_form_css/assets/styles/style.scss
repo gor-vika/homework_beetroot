@@ -6,6 +6,9 @@ body{
     font-family: 'Roboto', sans-serif;
     font-size: 0.9375rem;
     color: $color-label-text;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
 }
 input[type=text],
@@ -30,9 +33,10 @@ label{
 }
 .form-wrapper{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
 .first_form{
     padding: 35px 34px 16px 36px;
     .form_title{
@@ -154,13 +158,16 @@ input[type=radio]{
 
     }
 }
-footer .comment{
+.comment.agree{
     padding: 0 90px;
     text-align: center;
     margin-bottom: 20px;
     a{
         text-decoration: none;
         color: #007BFF;
+        &:hover{
+            text-decoration: underline;
+        }
     }
 }
 .have_acc{
@@ -175,6 +182,9 @@ footer .comment{
         letter-spacing: -0.00625rem;
         text-decoration: none;
         color: #007BFF;
+        &:hover{
+            text-decoration: underline;
+        }
     }
 }
 .btn.accaunt{
