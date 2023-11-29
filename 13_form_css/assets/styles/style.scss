@@ -6,6 +6,7 @@ body{
     font-family: 'Roboto', sans-serif;
     font-size: 0.9375rem;
     color: $color-label-text;
+    height: 100vh;
 }
 input[type=text],
 input[type=email],
@@ -28,7 +29,6 @@ label{
     margin-bottom: 7px;
 }
 .form-wrapper{
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
