@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accaunt</title>
+    <link rel="stylesheet" href="assets/plugins/css/select2.min.css">
+    <link rel="stylesheet" href="assets/styles/style.min.css">
+</head>
+<body>
+    <main>
+        <div class="form-wrapper">
+            <div class="container">
+                <form action="#" method="post" class="first_form">
+                    <div class="form_title">Profile</div>
+                    <div class="section personal_data">
+                        <div class="userpic">
+                            <img src="assets/img/userpic.png" alt="profile_photo">
+                        </div>
+                        <div class="download">
+                            <label for="file"></label>
+                            <input type="file" id="file" name="file">
+                        </div>
+                        <div class="comment">Up to 1 MB (300x300 px)</div>
+                        <div class="delete">
+                            <button type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.00001 12.6667C4.00001 13.4 4.60001 14 5.33334 14H10.6667C11.4 14 12 13.4 12 12.6667V4.66667H4.00001V12.6667V12.6667ZM12.6667 2.66667H10.3333L9.66668 2H6.33334L5.66668 2.66667H3.33334V4H12.6667V2.66667V2.66667Z" fill="#969696"/>
+                              </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="double_section">
+                        <div class="section input_section">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" required>
+                        </div>
+                        <div class="section input_section">
+                            <label for="email">E-mail</label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+                    </div>
+                    <div class="section double_section">
+                        <div class="input_section">
+                            <label for="country_select">Country</label>
+                            <select  name="country" id="country_select" class="select" required>
+                                <option  value="">Select</option>
+                                <option value="Ukraine">Ukraine</option>
+                                <option value="Poland">Poland</option>
+                                <option value="Germany">Germany</option>
+                            </select>
+                        </div>
+                        <div class="input_section">
+                            <label for="city">City</label>
+                            <input type="text" name="city" id="city" required>
+                        </div>
+                    </div>
+                    <div class="double_section">
+                        <div class="section input_section">
+                            <label for="zip-code">Zip Code</label>
+                            <input type="text" name="zip-code" id="zip-code" maxlength="5" required>
+                        </div>
+                        <div class="section input_section">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" name="phone" id="phone">
+                        </div>
+                    </div>
+                    <div class="btn accaunt">
+                        <button type="submit">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/plugins/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+    $('.select').select2();
+});
+    </script>
+</body>
+</html>

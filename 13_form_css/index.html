@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="assets/plugins/css/select2.min.css">
+    <link rel="stylesheet" href="assets/styles/style.min.css">
+</head>
+<body>
+    <main>
+        <div class="form-wrapper">
+        <div class="container">
+            <form action="#" method="post" class="first_form">
+                <div class="form_title">Create an Account</div>
+                <div class="double_section">
+                    <div class="section input_section">
+                        <label for="first_name">First Name</label>
+                        <input type="text" name="first_name" id="first_name" required>
+                    </div>
+                    <div class="section input_section">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" name="last_name" id="last_name" required>
+                    </div>
+                </div>
+                <div class="section input_section">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" required>
+                    <div class="comment">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="section gender_section">
+                    <div class="radiobutton">
+                        <input type="radio" name="gender" id="male" value="male" checked>
+                        <label for="male">Male</label>
+                    </div>
+                    <div class="radiobutton">
+                        <input type="radio" name="gender" id="female" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                </div>
+                <div class="section double_section">
+                    <div class="input_section">
+                        <label for="country_select">Country</label>
+                        <select  name="country" id="country_select" class="select" required>
+                            <option  value="">Select</option>
+                            <option value="Ukraine">Ukraine</option>
+                            <option value="Poland">Poland</option>
+                            <option value="Germany">Germany</option>
+                        </select>
+                    </div>
+                    <div class="input_section">
+                        <label for="city">City</label>
+                        <input type="text" name="city" id="city" required>
+                    </div>
+                </div>
+                <div class="btn">
+                    <button type="submit">Sign Up</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="comment">
+                By clicking the 'Sign Up' button, you confirm that you accept our <a href="#">Term of Use</a> and <a href="#">Privacy Policy</a>
+            </div>
+            <div class="have_acc">
+                <div>Have an account?</div>
+                <div><a href="profile.html">Log In</a></div>
+            </div>
+        </div>
+        
+    </footer>
+
+     <script src="assets/js/jquery-3.7.1.min.js"></script>
+     <script src="assets/plugins/js/select2.min.js"></script>
+     <script>
+        $(document).ready(function() {
+    $('.select').select2();
+});
+     </script>
+    
+</body>
+</html>
