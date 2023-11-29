@@ -219,6 +219,15 @@ input[type=radio]{
     button{
         border: none;
         background-color: #fff;
+        svg{
+            fill: #969696;
+        }
+        &:hover{
+            svg{
+                fill: #007BFF;
+            }
+            
+        }
     }
 }
 input[type=file]{
