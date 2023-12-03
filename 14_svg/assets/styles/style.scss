@@ -101,6 +101,7 @@ header{
             height: 38px;
             background-color: #EFEEF3;
             border-radius: 5px;
+            transition: all .2s ease;
             &:not(:last-child){
                 margin-right: 5px;
             }   
