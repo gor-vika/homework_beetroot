@@ -1,0 +1,117 @@
+@import 'general';
+header{
+    padding: 22px 0;
+    border-bottom: 1px solid #EFEEF3;
+    background-color: #fff;
+    backdrop-filter: blur(2px);  
+}
+.logo{
+    max-width: 200px;
+    max-height: 35px;
+}
+.services{
+    padding: 180px 0 100px;
+    .service-subtitle{
+        color: #7690A8;
+        line-height: 1.3125rem;
+        margin-bottom: 15px;
+        padding-left: 3px;
+        letter-spacing: -1.1px;
+    }
+    .service-title{
+        font-family: 'Nunito', sans-serif;
+        font-size: 2.5rem;
+        line-height: 3.25rem;
+        letter-spacing: 0.0125rem;
+        letter-spacing: -0.4px;
+        margin-bottom: 33px;
+    }
+    .service-cards{
+        display: flex;
+        gap: 30px;
+    }
+    .service-item{
+        padding: 40px 0 36px 40px;
+        border-radius: 8px;
+        border: 1px solid #E5EAF4;
+        transition: all .2s ease;
+        &:hover{
+            border: 1px solid #3DB370;
+            .hover_color1{
+                fill: #E1F4F5;
+            }
+            .hover_color2 {
+            fill: #F4FEFF;
+            }
+            .hover_color3{
+                fill: #CAEFF2;
+            }
+            .hover_color4{
+                fill: #52C29D;
+            }
+            .hover_color5{
+                fill: white;
+            }
+        }
+    }
+
+    .card-icon{
+        display: inline-block;
+        width: 64px;
+        aspect-ratio: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 29%;
+        border: 1px solid #E5EAF4;
+        margin-bottom: 30px;
+    }
+    .card-title{
+        font-size: 1.5rem;
+        line-height: 1.33rem;
+        letter-spacing: 0.0125rem;
+        margin-bottom: 15px;
+    }
+    .card-desc{
+        margin-bottom: 20px;
+    }
+    .card-link{
+        line-height: 1.6rem;
+        a{
+            text-decoration: none;
+            font-family: 'Roboto 600', sans-serif;
+            color: #3DB370;
+            transition: all .2s ease;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+.footer{
+    background-color: #16133D;
+    padding: 40px 0;
+    .logo{
+        margin-bottom: 40px;
+    }
+    .social-block{
+        .social-item{
+            display: inline-block;
+            width: 38px;
+            height: 38px;
+            background-color: #EFEEF3;
+            border-radius: 5px;
+            &:not(:last-child){
+                margin-right: 5px;
+            }   
+            svg{
+                width: 100%;
+                height: 100%;
+                fill: #0D0D0D;
+            }
+            &:hover svg{
+                fill: #3DB370;
+            }
+        }
+    } 
+}
