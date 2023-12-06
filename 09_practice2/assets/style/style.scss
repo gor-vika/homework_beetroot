@@ -12,6 +12,9 @@ ul{
 }
 img{
     vertical-align: top;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 a, button{
     text-decoration: none;
@@ -22,6 +25,12 @@ body{
     background-color: #F6F6F6;
     font-size: 1rem;
     font-family: 'Lato', sans-serif;
+}
+.page-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 .container{
     width: min(90%, 1170px);
@@ -59,16 +68,23 @@ body{
     background-color: $white-color;
     font-size: 1.125rem;
     text-transform: uppercase;
+    svg{
+        display: none;
+    }
     &:hover{
         background-color: $hover-color;
         color: $white-color;
         border: 1px solid $hover-color;
     }
 }
+.hamburger{
+    display: none;
+}
 
 main{
     padding: 150px 0;
     text-align: center;
+    flex-grow: 1;
     .title{
         font-size: 2.125rem;
         letter-spacing: 0.27625rem;
@@ -190,8 +206,51 @@ footer{
                 }
             }
         }
-    }
-   
-    
-    
+    } 
 }
+@media screen and (max-width: 980px){
+    .header .navigation{
+        display: none;
+    }
+    .hamburger{
+        display: block;
+    }
+}
+@media screen and (max-width: 800px){
+    main {
+        padding: 50px 0;
+    }
+    .team{
+        flex-wrap: wrap;
+    }
+    .team_item{
+        width: calc(50% - 15px);    
+    }
+}
+@media screen and (max-width: 500px){
+    .btn{
+        span{
+            display: none;
+        }
+        svg{
+            display: block;
+            path{
+                fill: $title-subtitle-color;
+            }
+        }
+        &:hover svg path{
+            fill: #fff;
+        }
+    }
+}
+@media screen and (max-width: 420px){
+    .team_item{
+        width: 100%;    
+    }
+    footer .navigation{
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 0 17vw;
+    }
+}
+

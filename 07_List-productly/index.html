@@ -7,103 +7,186 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/styles/style.css">
+<link rel="stylesheet" href="assets/styles/hamburgers.min.css">
+    <link rel="stylesheet" href="assets/styles/style.min.css">
 </head>
 <body>
     <header>
         <nav class="container navigation">
             <div class="logo">
-                <img src="assets/img/Logo.svg" alt="logotype">
+                <a href="#">
+                    <img src="assets/img/Logo.svg" alt="logotype">
+                </a>
             </div>
             <div class="nav">
                 <ul>
                     <li><a href="#">Product</a></li>
-                    <li><a href="#first-screen">Customers</a></li>
+                    <li><a href="#">Customers</a></li>
                     <li><a href="#">Pricing</a></li>
                     <li><a href="#">Resources</a></li>
                 </ul>
             </div>
+            <button class="hamburger" type="button">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+            </button>
             <div class="login">
                 <button type="button" class="btn">Sign In</button>
                 <button type="button" class="btn">Sign Up</button>
             </div>
+            
         </nav>
     </header>
     <main>
-        <section id="first-screen">
+        <section class="double-section">
             <div class="container flex">
-                <div class="first_screen_content">
-                    <h1>The Design Thinking superpowers</h1>
-                    <p>Tools, tutorials, design and innovation experts, all in one 
+                <div class="text_content intro">
+                    <h1 class="first_title">The Design Thinking superpowers</h1>
+                    <p class="text">Tools, tutorials, design and innovation experts, all in one 
                     place! The most intuitive way to imagine your next user 
                     experience.</p>
-                    <div>
-                        
-                    </div>
                     <button type="button" class="btn main">Get started</button>
                 </div>
                 <div class="first_screen_img">
                     <img src="assets/img/first-screen.svg" alt="fon_image">
                 </div>
-
             </div>
         </section>
-        <section id="features">
-            <div class="container">
-                <h2>We design tools to unveil your superpowers</h2>
-                <ul>
-                    <li>
-                        <div class="square"></div>
-                        <h3>First click tests</h3>
+        <section class="features">
+            <div class="container ">
+                <h2 class="title">We design tools to unveil your superpowers</h2>
+                <ul class="features_list">
+                    <li class="features_item">
+                        <div class="square arrow"></div>
+                        <h3 class="item_title">First click tests</h3>
                         <div>While most people enjoy casino gambling,</div>
                     </li>
-                    <li>
-                        <div class="square"></div>
-                        <h3>Design surveys</h3>
+                    <li class="features_item">
+                        <div class="square wave"></div>
+                        <h3 class="item_title">Design surveys</h3>
                         <div>Sports betting, lottery and bingo playing for the fun</div>
                     </li>
-                    <li>
-                        <div class="square"></div>
-                        <h3>Preference tests</h3>
+                    <li class="features_item">
+                        <div class="square heart"></div>
+                        <h3 class="item_title">Preference tests</h3>
                         <div>The Myspace page defines the individual.</div>
                     </li>
-                    <li>
-                        <div class="square"></div>
-                        <h3>Five second tests</h3>
+                    <li class="features_item">
+                        <div class="square clock"></div>
+                        <h3 class="item_title">Five second tests</h3>
                         <div>Personal choices and the overall personality of the person.</div>
                     </li>
                 </ul>
-                <div>
+                <div class="features_button">
                     <button type="button" class="btn main">Sign up Now</button>
                 </div>
             </div>
         </section>
+        <section class="double-section">
+            <div class="container flex design">
+                <div class="text_content design-wrapper">
+                    <div class="pre-title">
+                        Effortless Validation for
+                    </div>
+                    <h1 class="title">Design Professionals</h1>
+                    <p class="text">The Myspace page defines the individual, his or her characteristics, traits, personal choices and the overall personality of the person.</p>
+                    <h2 class="subtitle">Accessory makers</h2>
+                    <p class="text">
+                        While most people enjoy casino gambling, sports betting, lottery and bingo playing for the fun
+                    </p>
+                    <h2 class="subtitle">Alterationists</h2>
+                    <p class="text">
+                        If you are looking for a new way to promote your business that won&rsquo;t cost you more money,
+                    </p>
+                    <h2 class="subtitle">Custom Design designers</h2>
+                    <p class="text">
+                        If you are looking for a new way to promote your business that won&rsquo;t cost you more money, 
+                    </p>
+                </div>
+                <div class="first_screen_img">
+                    <img src="assets/img/design.svg" alt="fon_image">
+                </div>
+
+            </div>
+        </section>
+        <section class="double-section">
+            <div class="container flex product reverse">
+                <div class="text_content product-text">
+                    <div class="pre-title">
+                        Easier decision making for
+                    </div>
+                    <h1 class="title">Product Managers</h1>
+                    <p class="text">The Myspace page defines the individual, his or her characteristics, traits, personal choices and the overall personality of the person.</p>
+                    <ul class="product-list">
+                        <li class="product-item">Never worry about overpaying for your energy bill again. </li>
+                        <li class="product-item">We will only switch you to energy companies that we trust and will treat you right.</li>
+                        <li class="product-item">We track the markets daily and know where the savings are.</li>
+                    </ul>
+                    
+                </div>
+                <div class="first_screen_img">
+                    <img src="assets/img/product.svg" alt="fon_image">
+                </div>
+            </div>
+        </section>
+        <section class="double-section">
+            <div class="container flex marketers">
+                <div class="text_content marketers-wrapper">
+                    <div class="pre-title">
+                        Optimisation for
+                    </div>
+                    <h1 class="title">Marketers</h1>
+                    <p class="text">
+                        Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior.
+                    </p>
+                    <h2 class="subtitle">Accessory makers</h2>
+                    <p class="text">
+                        While most people enjoy casino gambling, sports betting, lottery and bingo playing for the fun
+                    </p>
+                    <h2 class="subtitle">Alterationists</h2>
+                    <p class="text">
+                        If you are looking for a new way to promote your business that won&rsquo;t cost you more money,
+                    </p>
+                    <h2 class="subtitle">Custom Design designers</h2>
+                    <p class="text">
+                        If you are looking for a new way to promote your business that won&rsquo;t cost you more money, 
+                    </p>
+                </div>
+                <div class="first_screen_img">
+                    <img src="assets/img/marketers.svg" alt="fon_image">
+                </div>
+
+            </div>
+        </section>
     </main>
-    <footer id="footer">
+    <footer>
         <div class="container">
             <div class="logo">
-                <img src="assets/img/Logo.svg" alt="logo">
+                <a href="#">
+                    <img src="assets/img/Logo.svg" alt="logo">
+                </a>
             </div>
-            <div>
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">FAQ</a></li>
+            <div class="footer_nav">
+                <h4 class="footer_subtitle">Quick Links</h4>
+                <ul class="footer_list">
+                    <li class="footer_list_item"><a class="footer_link" href="#">About Us</a></li>
+                    <li class="footer_list_item"><a class="footer_link" href="#">Blog</a></li>
+                    <li class="footer_list_item"><a class="footer_link" href="#">Contact</a></li>
+                    <li class="footer_list_item"><a class="footer_link" href="#">FAQ</a></li>
                 </ul>
             </div>
-            <div>
-                <h4>Legal Stuff</h4>
-                <ul>
-                    <li><a href="#">Disclaimer</a></li>
-                    <li><a href="#">Financing</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
+            <div class="footer_nav">
+                <h4 class="footer_subtitle">Legal Stuff</h4>
+                <ul class="footer_list">
+                    <li class="footer_list_item"><a class="footer_link" href="#">Disclaimer</a></li>
+                    <li class="footer_list_item"><a class="footer_link" href="#">Financing</a></li>
+                    <li class="footer_list_item"><a class="footer_link" href="#">Privacy Policy</a></li>
+                    <li class="footer_list_item"><a class="footer_link" href="#">Terms of Service</a></li>
                 </ul>
             </div>
-            <form action="phone" method="get">
-                <label for="phone">Knowing you're always on the best energy deal.</label>
+            <form class="footer_form" action="phone" method="get">
+                <label class="phone_label" for="phone">Knowing you're always on the best energy deal.</label>
                 <input type="tel" name="phone" id="phone" 
                 maxlength="13"  placeholder="Enter your phone Number" required>
                 <button type="submit" class="btn main">Sign up Now</button>
