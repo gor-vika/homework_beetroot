@@ -7,10 +7,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles/hamburgers.min.css">
+
     <link rel="stylesheet" href="assets/styles/style.min.css">
 </head>
 <body>
+    <div class="page-overlay"></div>
+    <div class="menu-panel" > 
+        <div class="panel-top">
+            <div class="logo-mobile">
+                <a href="#">
+                    <img src="assets/img/Logo.svg" alt="logotype">
+                </a>
+            </div>
+            <button id="hamb-btn-mobile" class="hamburger hamburger--spring is-active" type="button">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
+        </div>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Customers</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Resources</a></li>
+            </ul>
+            <button type="button" class="btn">Sign In</button>
+            <button type="button" class="btn">Sign Up</button>
+        </div>
+    </div>
     <header>
         <nav class="container navigation">
             <div class="logo">
@@ -26,16 +51,15 @@
                     <li><a href="#">Resources</a></li>
                 </ul>
             </div>
-            <button class="hamburger" type="button">
-                <span class="hamburger-box">
-                  <span class="hamburger-inner"></span>
-                </span>
-            </button>
             <div class="login">
                 <button type="button" class="btn">Sign In</button>
                 <button type="button" class="btn">Sign Up</button>
             </div>
-            
+            <button id="hamb-btn" class="hamburger hamburger--spring" type="button">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
         </nav>
     </header>
     <main>
@@ -193,5 +217,15 @@
             </form>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('hamb-btn').addEventListener('click', function(){
+        document.body.classList.toggle('open-mobile-menu')
+        document.getElementById('hamb-btn').classList.toggle('is-active')})
+
+        document.getElementById('hamb-btn-mobile').addEventListener('click', function(){
+        document.body.classList.toggle('open-mobile-menu')
+        document.getElementById('hamb-btn').classList.toggle('is-active')})
+    </script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+@import 'hamburger';
 $color-bg:#FFFFFF;
 $color-text: #2F281E;
 $color-button: #FF9900;
@@ -304,8 +305,84 @@ footer .container{
 .hamburger{
     display: none;
 }
+
+.page-overlay{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: #8c8179, $alpha: 0.9);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+}
+.menu-panel{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 375px;
+    height: 100vh;
+    background-color: #FFAD69;
+    z-index: 1001;
+    transform: translateX(-120%);
+    .panel-top{
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo-mobile{
+            width: 250px;
+        }
+    }
+}
+.mobile-menu{
+    padding: 40px;
+    a{
+        display: inline-block;
+        width: 100%;
+        padding: 15px;
+        font-size: 2rem;
+        text-decoration: none;
+        color: #2F281E;
+        background-color: transparent;
+        transition: all .2 ease;
+        &:hover{
+            color: $color-bg;
+        }
+    }
+    button{
+        display: block;
+        margin-bottom: 15px;
+        width: 100%;
+        background-color: #FFFFFF;
+        color: $color-button;
+        transition: all .2s ease;
+        &:not(:last-child){
+            margin-top: 40px;
+        }
+        
+        &:hover{
+            background-color: $color-button;
+            color: #FFFFFF;
+            border: 1px solid #FFFFFF;
+        }
+    }
+}
+.open-mobile-menu{
+    .page-overlay{
+        opacity: 1;
+        visibility: visible;
+    }
+    .menu-panel{
+        transform: translateX(0);
+    }
+}
 @media screen and (max-width: 1024px){
     .nav{
+        display: none;
+    }
+    .login{
         display: none;
     }
     .hamburger{
@@ -317,6 +394,7 @@ footer .container{
     }
 }
 @media screen and (max-width: 959px){
+    
     .first_screen_img{
         width: 40%;
     }
@@ -418,9 +496,6 @@ footer .container{
     }
 }
 @media screen and (max-width: 660px){
-    .login{
-        display: none;
-    }
     .features{
         padding-bottom: 30px;
     }
@@ -437,6 +512,9 @@ footer .container{
     .features .features_list .features_item .item_title{
         font-size: 1rem;
         font-weight: 600;
+    }
+    .text_content {
+        padding: 0 30px;
     }
 }
 @media screen and (max-width: 598px){
@@ -514,7 +592,8 @@ footer .container{
 }
 @media screen and (max-width: 425px){
     .first_screen_img{
-        display: none;
+        width: 100%;
+        margin-bottom: 10px;
     }
     .navigation{
         margin-bottom: 20px;
@@ -533,6 +612,9 @@ footer .container{
     .features .features_list .features_item .item_title
     {
         font-size: 0.8rem;
+    }
+    .text{
+        margin-bottom: 0;
     }
     .product-list .product-item{
         padding-bottom: 10px;
@@ -561,32 +643,35 @@ footer .container{
     .text_content .text:not(:last-of-type){
         margin-bottom: 10px;
     }
-}
-@media screen and (max-width: 375px){
-    .navigation{
+    .features .title, .text_content {
         margin-bottom: 0;
-        height: 60px;
-    }
-    .text:not(:last-child) {
-        margin-bottom: 10px;
-    }
-    .features .features_list {
-        gap: 5px;
-        margin-bottom: 10px;
-    }
-    .text{
-        line-height: 1rem;
-    }
-    .text_content .product-list .product-item {
-        line-height: 1rem;
-        padding-left: 45px;
-        font-size: 0.8rem;
-    }
-    .text_content .product-list .product-item {
-        padding-bottom: 10px;
-    }
-    .marketers-wrapper .title{
-        margin-bottom: 10px;
     }
 }
+// @media screen and (max-width: 375px){
+//     .navigation{
+//         margin-bottom: 0;
+//         height: 60px;
+//     }
+//     .text:not(:last-child) {
+//         margin-bottom: 10px;
+//     }
+//     .features .features_list {
+//         gap: 5px;
+//         margin-bottom: 10px;
+//     }
+//     .text{
+//         line-height: 1rem;
+//     }
+//     .text_content .product-list .product-item {
+//         line-height: 1rem;
+//         padding-left: 45px;
+//         font-size: 0.8rem;
+//     }
+//     .text_content .product-list .product-item {
+//         padding-bottom: 10px;
+//     }
+//     .marketers-wrapper .title{
+//         margin-bottom: 10px;
+//     }
+// }
 
