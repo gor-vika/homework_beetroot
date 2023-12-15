@@ -53,9 +53,21 @@ img{
         transition: all .1s ease-in;
         &:hover {
             color: $color-button;
+            animation: text-focus-in .5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
         }
     }
 }
+@keyframes text-focus-in {
+    0% {
+      filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  
 .btn{
     width: 110px;
     height: 46px;
@@ -69,6 +81,7 @@ img{
     color: $color-text;
     transition: all .1s ease-in;
     &:hover{
+        animation: heartbeat 1.5s ease-in-out infinite both;
         border: 1px solid $color-button;
         color: $color-bg;
         background-color: $color-button;
@@ -77,6 +90,29 @@ img{
         margin-right: 32px;
     }
 }
+@keyframes heartbeat {
+    from {
+      transform: scale(1);
+      transform-origin: center center;
+      animation-timing-function: ease-out;
+    }
+    10% {
+      transform: scale(0.91);
+      animation-timing-function: ease-in;
+    }
+    17% {
+      transform: scale(0.98);
+      animation-timing-function: ease-out;
+    }
+    33% {
+      transform: scale(0.87);
+      animation-timing-function: ease-in;
+    }
+    45% {
+      transform: scale(1);
+      animation-timing-function: ease-out;
+    }
+  }
 .first_screen_img{
     max-width: 50%;
 }
