@@ -1,0 +1,56 @@
+$text-color: #000;
+*, *::after, *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul, ol{
+    list-style: none;
+}
+img{
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+a, button{
+    transition: all .2s ease;
+}
+.container{
+    width: min(90%, 1170px);
+    margin: 0 auto;
+}
+body{
+    font-family: sans-serif;
+    font-size: 1.1875rem;
+    line-height: 2rem;
+    color: $text-color;
+    background-color: #fff;
+    padding: 100px;
+}
+.page-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+main{
+    flex-grow: 1; //щоб main розтягнувся на все вільне місце по висоті
+}
+.list{
+    margin-bottom: 50px;
+}
+.list-title{
+    text-align: center;
+}
+.multiTable_flex{
+    display: flex;
+    flex-wrap: wrap;
+}
