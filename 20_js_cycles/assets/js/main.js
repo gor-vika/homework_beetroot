@@ -297,10 +297,105 @@ function task11() {
     document.getElementById('multiTableHelp').innerHTML = result;
 }
 
-// function task12(){
-//     const userDate = new Date(document.getElementById(`date_task`).value);
-//     let nextDate = new Date();
-
-//     nextDate = `${userDate.setDate(userDate.getDate() + 1)}`;
-//     document.getElementById(`dateTaskHelp`).innerHTML = nextDate;
+// function receiveDatas(){
+//     let dayIn = document.getElementById('date_data').valueAsNumber;
+//     let monthIn = document.getElementById('month_data').valueAsNumber;
+//     let yearIn = document.getElementById('year_data').valueAsNumber;
 // }
+
+// function checkData(data1, data2, data3){
+//     if (isNaN(data1)){
+//         document.getElementById('dateTaskHelp').innerHTML = `<span style="color:red">Некоректне значення</span>`;
+//         return;
+//     }
+//     if (isNaN(data2)){
+//         document.getElementById('dateTaskHelp').innerHTML = `<span style="color:red">Некоректне значення</span>`;
+//         return;
+//     }
+//     if (isNaN(data3)){
+//         document.getElementById('dateTaskHelp').innerHTML = `<span style="color:red">Некоректне значення</span>`;
+//         return;
+//     }
+// }
+
+
+
+function nextDay() {
+
+    let dayIn = document.getElementById('date_data').valueAsNumber;
+    let monthIn = document.getElementById('month_data').valueAsNumber;
+    let yearIn = document.getElementById('year_data').valueAsNumber;
+    let dayOut = dayIn + 1,
+        monthOut = monthIn,
+        yearOut = yearIn;
+
+        if (isNaN(dayIn)){
+            document.getElementById('dateTaskHelp').innerHTML = `<span style="color:red">Некоректне значення</span>`;
+            return;
+        }
+        if (isNaN(monthIn)){
+            document.getElementById('dateTaskHelp').innerHTML = `<span style="color:red">Некоректне значення</span>`;
+            return;
+        }
+        if (isNaN(yearIn)){
+            document.getElementById('dateTaskHelp').innerHTML = `<span style="color:red">Некоректне значення</span>`;
+            return;
+        }
+    function leapYear(y){
+        return y % 4 === 0 && y % 100 !== 0 || y % 400 === 0;
+    }
+    function showResult(){
+        let result = '';
+        result = `${dayOut}.${monthOut}.${yearOut}`;
+        document.getElementById('dateTaskHelp').innerHTML = result;
+    }
+
+    switch (monthIn){
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            if (dayIn === 31){
+            dayOut = 1;
+            monthOut = monthIn + 1;
+            }
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            if (dayIn === 30){
+                dayOut = 1;
+                monthOut = monthIn + 1;
+            }
+            break;
+        case 2:
+            if (leapYear(yearIn)){
+                if (dayIn === 29){
+                    dayOut = 1;
+                    monthOut = monthIn + 1;
+                }
+                else {
+                    if (dayIn === 28){
+                        dayOut = 1;
+                        monthOut = monthIn + 1;
+                    }
+                }
+            }
+            break;
+    }
+
+    if (monthOut === 13){
+        monthOut = 1;
+        yearOut = yearIn + 1;
+    }
+
+    // return `${dayOut}.${monthOut}.${yearOut}`;
+    return showResult();
+}
+
+    
+

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+    <link rel="stylesheet" href="assets/style/style.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="page-wrapper">
+        <main>
+            <div class="container">
+              <div class="mb-3">
+                <p class="card-text title">
+                  Напиши всі можливі варіанти створення функцій.
+                </p>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Конструктор функції</li>
+                  <li class="list-group-item">Оголошення функції</li>
+                  <li class="list-group-item">Вираз функції</li>
+                  <li class="list-group-item">Метод</li>
+                  <li class="list-group-item">Стрілкова функція</li>
+                </ul>
+              </div>
+              <div class="mb-3">
+                <p class="card-text title">
+                  Створи функцію, яка буде виводити кількість переданих їй аргументів.
+                </p>
+                <label for="arguments" class="form-label">Ввести дані через кому</label>
+                <input class="form-control" id="arguments">
+                <div id="argumentsHelp" class="form-text"></div>
+                <button type="button" class="btn btn-primary" onclick="task1()">Виконати</button>
+              </div>
+              <div class="mb-3">
+                <p class="card-text title">
+                  Напиши функцію, яка приймає 2 числа і повертає:
+                  <br>-1, якщо перше число менше, ніж друге; 
+                  <br>1 - якщо перше число більше, ніж друге; 
+                  <br>0 - якщо числа рівні.
+                </p>
+                <label for="first_number" class="form-label">Перше число</label>
+                <input type="number" class="form-control" id="first_number">
+                <label for="second_number" class="form-label">Друге число</label>
+                <input type="number" class="form-control" id="second_number">
+                <div id="twoNumbersHelp" class="form-text"></div>
+                <div id="twoNumbersError" class="form-text"></div>
+                <button type="button" class="btn btn-primary" onclick="task2()">Виконати</button>
+              </div>
+              <div class="mb-3">
+                <p class="card-text title">
+                  Напиши функцію, яка обчислює факторіал переданого їй числа.
+                </p>
+                <label for="factorial_number" class="form-label">Ввести число</label>
+                <input type="number" class="form-control" id="factorial_number">
+                <div id="factorial_numberHelp" class="form-text"></div>
+                <button type="button" class="btn btn-primary" onclick="task3()">Виконати</button>
+              </div>
+              <div class="mb-3">
+                <p class="card-text title">
+                  Напиши функцію, яка приймає три окремі цифри і перетворює їх в одне число. Наприклад: цифри 1, 4, 9 перетворяться в число 149.
+                </p>
+                <label for="number_100" class="form-label">Ввести число</label>
+                <input type="number" class="form-control" id="number_100">
+                <label for="number_10" class="form-label">Ввести число</label>
+                <input type="number" class="form-control" id="number_10">
+                <label for="number_1" class="form-label">Ввести число</label>
+                <input type="number" class="form-control" id="number_1">
+                <div id="numberHundredHelp" class="form-text"></div>
+                <button type="button" class="btn btn-primary" onclick="task4()">Виконати</button>
+              </div>
+              <div class="mb-3">
+                <p class="card-text title">
+                  Напиши функцію, яка приймає довжину і ширину прямокутника і обчислює його площу. Якщо в функцію передали 1 параметр, то вона обчислює площу квадрата.
+                </p>
+                <label for="length_rectangle" class="form-label">Ввести число</label>
+                <input type="number" class="form-control" id="length_rectangle">
+                <label for="width_rectangle" class="form-label">Ввести число</label>
+                <input type="number" class="form-control" id="width_rectangle">
+                <div id="rectangleHelp" class="form-text"></div>
+                <button type="button" class="btn btn-primary" onclick="task5()">Виконати</button>
+              </div>
+              <div class="mb-3">
+                <p class="card-text title">
+                  Напиши функцію, яка перевіряє, чи є передане їй число “досконалим числом”. Досконале число - це число, яке дорівнює сумі всіх своїх дільників.
+                </p>
+                <label for="perfect_number" class="form-label">Ввести число</label>
+                <input type="number" class="form-control" id="perfect_number">
+                <div id="perfect_numberHelp" class="form-text"></div>
+                <button type="button" class="btn btn-primary" onclick="task6()">Виконати</button>
+              </div>
+              <div class="mb-3">
+                <p class="card-text title">
+                  Напиши функцію, яка приймає мінімальне і максимальне значення для діапазону, і виводить тільки ті числа з діапазону, які є досконалими. Використовуй написану раніше функцію, щоб дізнатися, чи є це число досконалим.
+                </p>
+                <label for="perfect_number_min" class="form-label">Ввести мінімальне значення діапазону</label>
+                <input type="number" class="form-control" id="perfect_number_min">
+                <label for="perfect_number_max" class="form-label">Ввести максимальне значення діапазону</label>
+                <input type="number" class="form-control" id="perfect_number_max">
+                <div id="perfect_number_minMaxHelp" class="form-text"></div>
+                <button type="button" class="btn btn-primary" onclick="task7()">Виконати</button>
+              </div>
+            </div>
+        </main>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

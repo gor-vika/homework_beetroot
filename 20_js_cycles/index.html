@@ -121,11 +121,15 @@
               <p class="card-text">
                 Запитай дату (день, місяць, рік) і виведи наступну за нею дату. Враховуй можливість переходу на наступний місяць, рік, а також високосний рік.
               </p>
-              <label for="date_task" class="form-label">Вкажи дату</label>
-              <input type="date" class="form-control" id="date_task">
+              <label for="date_data" class="form-label">Число</label>
+              <input type="number" class="form-control" id="date_data">
+              <label for="month_data" class="form-label">Місяць</label>
+              <input type="number" class="form-control" id="month_data">
+              <label for="year_data" class="form-label">Рік</label>
+              <input type="number" class="form-control" id="year_data">
               <div id="dateTaskHelp" class="form-text">
               </div>
-              <button type="button" class="btn btn-primary" onclick="task12()">Порахувати</button>
+              <button type="button" class="btn btn-primary" onclick="nextDay()">Порахувати</button>
             </div>
         </main>
     </div>
