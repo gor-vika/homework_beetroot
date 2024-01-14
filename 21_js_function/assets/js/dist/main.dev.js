@@ -12,16 +12,25 @@ function howManyArguments() {
   return arguments.length;
 }
 
+function getData(idValue) {
+  return document.getElementById(idValue).value;
+}
+
+function showResult(resultValue, idValue) {
+  var result = resultValue;
+  return document.getElementById(idValue).innerHTML = result;
+}
+
 function task1() {
-  var param = document.getElementById('arguments').value;
+  var param = getData("arguments");
   var array = param.split(',');
   result = howManyArguments.apply(void 0, _toConsumableArray(array));
-  document.getElementById('argumentsHelp').innerHTML = result;
+  showResult(result, 'argumentsHelp');
 }
 
 function task2() {
-  var num1 = document.getElementById('first_number').valueAsNumber;
-  var num2 = document.getElementById('second_number').valueAsNumber;
+  var num1 = parseFloat(getData('first_number'));
+  var num2 = parseFloat(getData('second_number'));
   var result = 0;
   checkData(num1);
   checkData(num2);
@@ -34,7 +43,7 @@ function task2() {
     result = 0;
   }
 
-  document.getElementById('twoNumbersHelp').innerHTML = result; // ось тут в разі не введення даних відображається і 0, і повідомлення про помилку???
+  showResult(result, 'twoNumbersHelp'); // ось тут в разі не введення даних відображається і 0, і повідомлення про помилку???
 }
 
 function checkData(variable) {
@@ -49,7 +58,7 @@ var compareNumbers = function compareNumbers(x, y) {
 };
 
 function task3() {
-  var num = document.getElementById('factorial_number').valueAsNumber;
+  var num = parseInt(getData('factorial_number'));
 
   if (isNaN(num)) {
     document.getElementById('factorial_numberHelp').innerHTML = "<span style=\"color:red\">\u041D\u0435\u043A\u043E\u0440\u0435\u043A\u0442\u043D\u0435 \u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F</span>";
@@ -57,7 +66,7 @@ function task3() {
   }
 
   textResult = numFactorial(num);
-  document.getElementById('factorial_numberHelp').innerHTML = textResult;
+  showResult(textResult, 'factorial_numberHelp');
 }
 
 function numFactorial(x) {
@@ -71,9 +80,9 @@ function numFactorial(x) {
 }
 
 function task4() {
-  var num1 = document.getElementById('number_100').valueAsNumber;
-  var num2 = document.getElementById('number_10').valueAsNumber;
-  var num3 = document.getElementById('number_1').valueAsNumber;
+  var num1 = parseInt(getData('number_100'));
+  var num2 = parseInt(getData('number_10'));
+  var num3 = parseInt(getData('number_1'));
   var result = 0;
 
   if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
@@ -82,7 +91,7 @@ function task4() {
   }
 
   result = hundredNumber(num1, num2, num3);
-  document.getElementById('numberHundredHelp').innerHTML = result;
+  showResult(result, 'numberHundredHelp');
 }
 
 var hundredNumber = function hundredNumber(x, y, j) {
@@ -90,8 +99,8 @@ var hundredNumber = function hundredNumber(x, y, j) {
 };
 
 function task5() {
-  var num1 = document.getElementById('length_rectangle').valueAsNumber;
-  var num2 = document.getElementById('width_rectangle').valueAsNumber;
+  var num1 = parseFloat(getData('length_rectangle'));
+  var num2 = parseFloat(getData('width_rectangle'));
   var result = 0;
 
   if (isNaN(num1)) {
@@ -100,14 +109,14 @@ function task5() {
   }
 
   if (!isNaN(num1) && !isNaN(num2)) {
-    result = square(num1, num2);
+    result = square(num1, num2).toFixed(2);
   }
 
   if (!isNaN(num1) && isNaN(num2)) {
-    result = square(num1);
+    result = square(num1).toFixed(2);
   }
 
-  document.getElementById('rectangleHelp').innerHTML = result;
+  showResult(result, 'rectangleHelp');
 }
 
 var square = function square(x) {
@@ -116,7 +125,7 @@ var square = function square(x) {
 };
 
 function task6() {
-  var num = document.getElementById('perfect_number').valueAsNumber;
+  var num = parseInt(getData('perfect_number'));
   var result = '';
 
   if (isNaN(num) || num < 3) {
@@ -135,7 +144,7 @@ function task6() {
   }
 
   ;
-  document.getElementById('perfect_numberHelp').innerHTML = result;
+  showResult(result, 'perfect_numberHelp');
 }
 
 function perfectNumber(x) {
@@ -153,8 +162,8 @@ function perfectNumber(x) {
 }
 
 function task7() {
-  var minNum = document.getElementById('perfect_number_min').valueAsNumber;
-  var maxNum = document.getElementById('perfect_number_max').valueAsNumber;
+  var minNum = parseInt(getData('perfect_number_min'));
+  var maxNum = parseInt(getData('perfect_number_max'));
   var result = '';
   var num = 0;
 
@@ -185,5 +194,5 @@ function task7() {
     } else result = 'Число не досконале';
   }
 
-  document.getElementById('perfect_number_minMaxHelp').innerHTML = result;
+  showResult(result, 'perfect_number_minMaxHelp');
 }

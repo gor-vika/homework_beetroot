@@ -2,16 +2,24 @@ function howManyArguments(){
     return arguments.length;
 }
 
+function getData(idValue){
+    return document.getElementById(idValue).value;
+}
+function showResult(resultValue, idValue){
+    let result = resultValue;
+    return document.getElementById(idValue).innerHTML = result;
+}
+
 function task1(){
-    const param = document.getElementById('arguments').value;
+    const param = getData("arguments");
     const array = param.split(',');
     result = howManyArguments(...array);
-    document.getElementById('argumentsHelp').innerHTML = result;
+    showResult(result, 'argumentsHelp');
 }
 
 function task2(){
-    const num1 = document.getElementById('first_number').valueAsNumber;
-    const num2 = document.getElementById('second_number').valueAsNumber;
+    const num1 = parseFloat(getData('first_number'));
+    const num2 = parseFloat(getData('second_number'));
     let result = 0;
 
     checkData(num1);
@@ -26,8 +34,7 @@ function task2(){
     else if (compareNumbers(num1, num2) === 0){
         result = 0;
     }
-    
-    document.getElementById('twoNumbersHelp').innerHTML = result;
+    showResult(result, 'twoNumbersHelp');
     // ось тут в разі не введення даних відображається і 0, і повідомлення про помилку???
 }
 function checkData (variable){
@@ -39,13 +46,13 @@ function checkData (variable){
 const compareNumbers = (x, y) => x - y;
 
 function task3(){
-    const num = document.getElementById('factorial_number').valueAsNumber;
+    const num = parseInt(getData('factorial_number'));
     if (isNaN(num)){
         document.getElementById('factorial_numberHelp').innerHTML = `<span style="color:red">Некоректне значення</span>`;
         return;
     }
-    textResult = numFactorial(num)
-    document.getElementById('factorial_numberHelp').innerHTML = textResult;
+    textResult = numFactorial(num);
+    showResult(textResult, 'factorial_numberHelp');
 }
 function numFactorial(x){
     let result = 1;
@@ -56,9 +63,9 @@ function numFactorial(x){
 }
 
 function task4(){
-    const num1 = document.getElementById('number_100').valueAsNumber;
-    const num2 = document.getElementById('number_10').valueAsNumber;
-    const num3 = document.getElementById('number_1').valueAsNumber;
+    const num1 = parseInt(getData('number_100'));
+    const num2 = parseInt(getData('number_10'));
+    const num3 = parseInt(getData('number_1'));
     let result = 0;
 
     if (isNaN(num1) || isNaN(num2) || isNaN(num3)){
@@ -66,14 +73,15 @@ function task4(){
         return;
     }
     result = hundredNumber(num1, num2, num3);
-    document.getElementById('numberHundredHelp').innerHTML = result;
+    showResult(result, 'numberHundredHelp');
+
 }
 
 const hundredNumber = (x,y,j) => x*100 + y*10 + j;
  
 function task5(){
-    const num1 = document.getElementById('length_rectangle').valueAsNumber;
-    const num2 = document.getElementById('width_rectangle').valueAsNumber;
+    const num1 = parseFloat(getData('length_rectangle'));
+    const num2 = parseFloat(getData('width_rectangle'));
     let result = 0;
 
     if (isNaN(num1)){
@@ -81,19 +89,18 @@ function task5(){
         return;
     }
     if (!isNaN(num1) && !isNaN(num2)){
-        result = square(num1,num2);
+        result = square(num1,num2).toFixed(2);
     }
     if (!isNaN(num1) && isNaN(num2)){
-        result = square(num1);
+        result = square(num1).toFixed(2);
     }
-    
-    document.getElementById('rectangleHelp').innerHTML = result;
+    showResult(result, 'rectangleHelp');
 }
 
 const square = (x, y=x) => x*y;
 
 function task6(){
-    const num = document.getElementById('perfect_number').valueAsNumber;
+    const num = parseInt(getData('perfect_number'));
     let result = '';
 
     if (isNaN(num) || num < 3){
@@ -106,8 +113,7 @@ function task6(){
     if (perfectNumber(num) === false){
         result = `Число ${num} не досконале`;
     };
-
-    document.getElementById('perfect_numberHelp').innerHTML = result;
+    showResult(result, 'perfect_numberHelp');
 }
 function perfectNumber(x){
     let sum = 0;
@@ -123,8 +129,8 @@ function perfectNumber(x){
 }
 
 function task7(){
-    const minNum = document.getElementById('perfect_number_min').valueAsNumber;
-    const maxNum = document.getElementById('perfect_number_max').valueAsNumber;
+    const minNum = parseInt(getData('perfect_number_min'));
+    const maxNum = parseInt(getData('perfect_number_max'));
     let result = '';
     let num = 0;
 
@@ -152,5 +158,6 @@ function task7(){
         }
         else result = 'Число не досконале';
     }
-    document.getElementById('perfect_number_minMaxHelp').innerHTML = result;
+    showResult(result, 'perfect_number_minMaxHelp');
+
 }
