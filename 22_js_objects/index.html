@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+    <link rel="stylesheet" href="assets/style/style.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="page-wrapper">
+        <main>
+            <div class="container">
+              <div class="card text-bg-light mb-1">
+                <div class="card-header">Створи об'єкт, що описує автомобіль (виробник, модель, рік випуску, середня швидкість, обсяг паливного баку, середня витрата палива на 100 км., водії), і наступні методи для роботи з цим об'єктом:
+                  <ol>
+                    <li>Метод, який виводить на екран інформацію про автомобіль.</li>
+                    <li>Підрахунок необхідного часу та кількості палива для подолання переданої відстані з середньою швидкістю. Враховуй, що через кожні 4 години дороги водієві необхідно робити перерву на 1 годину. </li>
+                  </ol>
+                  <label for="distance" class="form-label" >Вкажи відстань (кілометрів)</label>
+                  <div id="car_error" class="error"></div>
+                  <input type="number" class="form-control" id="distance">
+                </div>
+                <div id="car_info"></div>
+                <div  id="car_info_task2"></div>
+                <div class="grid text-center">
+                  <button type="button" class="btn btn-info col-3" onclick="task1()">Вивести інформацію на екран</button>
+                  <button type="button" class="btn  btn-info col-3" onclick="getTime()">Порахувати</button>
+                </div> 
+              </div>
+              <div class="card text-bg-light mb-1">
+                <div class="card-header">Створити об'єкт, що описує час (години, хвилини, секунди), і такі функції для роботи з цим об'єктом:
+                  <ol>
+                    <li>Для виведення часу на екран.</li>
+                    <li>Зміни часу на передану кількість секунд.</li>
+                    <li>Зміни часу на передану кількість хвилин.</li>
+                    <li>Зміни часу на передану кількість годин.</li>
+                  </ol>
+                Враховуйте, що в останніх 3-х функціях, при зміні однієї частини часу, може змінитися і інша. Наприклад: якщо до часу «20:59:45» додати 30 секунд, то повинно вийти «21:00:15», а не «20:59:75». Також потрібно передбачити можливість того що користувач може передати 150 секунд, або 75 хвилин.
+                  <br><br>
+                  <label for="hours" class="form-label" >години</label>
+                  <div id="hours_error"></div>
+                  <input type="number" class="form-control" id="hours">
+                  <label for="minutes" class="form-label" >хвилини</label>
+                  <div id="minutes_error"></div>
+                  <input type="number" class="form-control" id="minutes">
+                  <label for="seconds" class="form-label" >секунди</label>
+                  <div id="seconds_error"></div>
+                  <input type="number" class="form-control" id="seconds">
+                  <label for="qtySec" class="form-label">Скільки секунд додати?</label>
+                  <input type = "number" class="form-control" id="qtySec">
+                  <div id="new_sec_error"></div>
+                  <label for="qtyMin" class="form-label">Скільки хвилин додати?</label>
+                  <input type = "number" class="form-control" id="qtyMin">
+                  <div id="new_min_error"></div>
+                  <label for="qtyHours" class="form-label">Скільки годин додати?</label>
+                  <input type = "number" class="form-control" id="qtyHours">
+                  <div id="new_hour_error"></div>
+                </div>
+                <div id="time_info"></div>
+                <div class="grid text-center">
+                  <button type="button" class="btn btn-info col-2" onclick="task2_1()">Завдання 1</button>
+                  <button type="button" class="btn  btn-info col-2" onclick="task2_2()">Завдання 2</button>
+                  <button type="button" class="btn btn-info col-2" onclick="task2_3()">Завдання 3</button>
+                  <button type="button" class="btn  btn-info col-2" onclick="task2_4()">Завдання 4</button>
+                </div> 
+              </div>
+              <div class="card text-bg-light mb-1">
+                <div class="card-header">Створи об'єкт, що описує звичайний дріб. Створи об'єкт, який має методи роботи з дробом:
+                  <ol>
+                    <li>Складання 2-х об'єктів-дробів.</li>
+                    <li>Віднімання 2-х об'єктів-дробів.</li>
+                    <li>Множення 2-х об'єктів-дробів.</li>
+                    <li>Ділення 2-х об'єктів-дробів.</li>
+                    <li>Скорочення об'єкта-дробу.</li>
+                  </ol>
+                  <label class="form-label">Перше число</label>
+                  <input type="number" class="form-control-12" id="numerator_first">
+                  <span>/</span>
+                  <input type="number" class="form-control-12" id="denominator_first">
+                  <label class="form-label">Друге число</label>
+                  <input type="number" class="form-control-12" id="numerator_second">
+                  <span>/</span>
+                  <input type="number" class="form-control-12" id="denominator_second">
+                </div>
+                <div id="numbers_info"></div>
+                <div class="grid text-center">
+                  <button type="button" class="btn btn-info col-2" onclick="task3_1()">Додавання</button>
+                  <button type="button" class="btn  btn-info col-2" onclick="task3_2()">Віднімання</button>
+                  <button type="button" class="btn btn-info col-2" onclick="task3_3()">Множення</button>
+                  <button type="button" class="btn  btn-info col-2" onclick="task3_4()">Ділення</button>
+                </div> 
+              </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="assets/js/main.js"></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js
+"></script>
+</body>
+</html>

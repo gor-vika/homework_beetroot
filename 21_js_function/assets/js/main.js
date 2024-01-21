@@ -138,6 +138,9 @@ function task7(){
         document.getElementById('perfect_number_minMaxHelp').innerHTML = `<span style="color:red">Некоректне значення</span>`;
         return;
     }
+    if (minNum > maxNum){
+        [minNum, maxNum] = [maxNum, minNum]
+    }
     if (minNum < maxNum){
         for (let i = minNum; i <= maxNum; i++){
             if (perfectNumber(i) === true){
@@ -145,13 +148,14 @@ function task7(){
          }
          }
     }
-    if (minNum > maxNum){
-        for (let i = maxNum; i <= minNum; i++){
-            if (perfectNumber(i) === true){
-             result += i+', ';
-         }
-         }
-    }
+    
+    // if (minNum > maxNum){
+    //     for (let i = maxNum; i <= minNum; i++){
+    //         if (perfectNumber(i) === true){
+    //          result += i+', ';
+    //      }
+    //      }
+    // }
     if (minNum === maxNum){
         if (perfectNumber(minNum) === true){
             result = 'Число досконале';

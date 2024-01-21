@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My shop</title>
+    <link rel="stylesheet" href="assets/style/style.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+      /* .my-toast{
+        position: fixed;
+        left: 20px;
+        top: 20px;
+        border-radius: 10px;
+        padding: 15px;
+        background-color: #a0a0a0;
+      } */
+      /* .my-toast.success{
+        background-color: #198754;
+        color: white;
+      }
+      .my-toast.error{
+        background-color: #dc3545;
+        color: white;
+      } */
+    </style>
+</head>
+<body>
+  <!-- <div class="my-toast">
+    <p class="mb-0">Lorem ipsum, dolor sit</p>
+  </div> -->
+  <div class="container">
+    <div class="card mb-4">
+      <div class="card-header">
+        <h3>Add product to cart</h3>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-6">
+            <label for="prod_title">Title</label>
+            <input type="text" id="prod_title" class="form-control">
+          </div>
+          <div class="col-2">
+            <label for="prod_qty">Quantity</label>
+            <input type="number" id="prod_qty" class="form-control" value="1" min="1">
+          </div>
+          <div class="col-2">
+            <label for="prod_price">Price</label>
+            <input type="number" id="prod_price" class="form-control"  min="0">
+          </div>
+          <div class="col-2">
+            <button type="button" class="btn btn-success mt-4" onclick="addToCart()">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3>Products list</h3>
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Title</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Subtotal</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="cart_tbody"></tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+  
+  <script src="assets/js/toast.js"></script>
+  <script src="assets/js/main.js"></script>
+ 
+
+</body>
+</html>
