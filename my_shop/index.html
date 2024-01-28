@@ -6,47 +6,26 @@
     <title>My shop</title>
     <link rel="stylesheet" href="assets/style/style.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <style>
-      /* .my-toast{
-        position: fixed;
-        left: 20px;
-        top: 20px;
-        border-radius: 10px;
-        padding: 15px;
-        background-color: #a0a0a0;
-      } */
-      /* .my-toast.success{
-        background-color: #198754;
-        color: white;
-      }
-      .my-toast.error{
-        background-color: #dc3545;
-        color: white;
-      } */
-    </style>
 </head>
 <body>
-  <!-- <div class="my-toast">
-    <p class="mb-0">Lorem ipsum, dolor sit</p>
-  </div> -->
   <div class="container">
-    <div class="card mb-4">
+    <div class="card mb-4 ">
       <div class="card-header">
         <h3>Add product to cart</h3>
       </div>
       <div class="card-body">
         <div class="row">
           <div class="col-6">
-            <label for="prod_title">Title</label>
-            <input type="text" id="prod_title" class="form-control">
+            <label for="product_title">Title</label>
+            <input type="text" id="product_title" class="form-control">
           </div>
           <div class="col-2">
-            <label for="prod_qty">Quantity</label>
-            <input type="number" id="prod_qty" class="form-control" value="1" min="1">
+            <label for="product_qty">Quantity</label>
+            <input type="number" id="product_qty" class="form-control" value="1" min="1">
           </div>
           <div class="col-2">
-            <label for="prod_price">Price</label>
-            <input type="number" id="prod_price" class="form-control"  min="0">
+            <label for="product_price">Price</label>
+            <input type="number" id="product_price" class="form-control" min="0">
           </div>
           <div class="col-2">
             <button type="button" class="btn btn-success mt-4" onclick="addToCart()">Add</button>
@@ -54,7 +33,7 @@
         </div>
       </div>
     </div>
-    <div class="card mb-4">
+    <div class="card mb-4 ">
       <div class="card-header">
         <h3>Discount</h3>
       </div>
@@ -62,10 +41,10 @@
         <div class="row">
           <div class="col-6">
             <label for="disc_type">Type</label>
-            <select class="form-control" id="disc_type">
+            <select id="disc_type" class="form-control">
               <option value="percent">Percent</option>
-              <option value="fixed">fixed</option>
-            </select> 
+              <option value="fixed">Fixed</option>
+            </select>
           </div>
           <div class="col-2">
             <label for="disc_amount">Amount</label>
@@ -79,14 +58,14 @@
     </div>
     <div class="card">
       <div class="card-header">
-        <h3>Products list</h3>
+        <h3>Product list</h3>
       </div>
       <div class="card-body">
-        <select id="sorting" class="form-control" onchange="productList()">
-          <option value="subtotalAsc">Subtotal asc</option>
-          <option value="subtotalDesc">Subtotal desc</option>
-          <option value="qtyAsc">Quantity asc</option>
-          <option value="qtyDesc">Quantity desc</option>
+        <select class="form-control" id="sorting" onchange="productList()">
+          <option value="subTotalAsc">Subtotal Asc</option>
+          <option value="subTotalDesc">Subtotal Desc</option>
+          <option value="qtyAsc">Quantity Asc</option>
+          <option value="qtyDesc">Quantity Desc</option>
           <option value="title">Title</option>
         </select>
         <table class="table">
@@ -116,13 +95,11 @@
           </tfoot>
         </table>
       </div>
-
     </div>
+     
+    
   </div>
-  <script src="assets/js/recurs.js"></script>
   <script src="assets/js/toast.js"></script>
   <script src="assets/js/main.js"></script>
- 
-
 </body>
 </html>
