@@ -12,8 +12,8 @@ $(function(){
         item: 1,
         slideMargin: 0,
         controls: false,
-        // auto: true,
-        // loop: true
+        auto: true,
+        loop: true
     }); 
 })
 $(function(){
