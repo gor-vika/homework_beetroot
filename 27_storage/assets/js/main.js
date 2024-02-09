@@ -27,7 +27,7 @@ function checkTime(city){
 }
 
 async function searchWeather(city){
-    const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&units=meter/sec`);
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&units=meter/sec`);
     const json = await response.json();
     if (json.cod === 200){
 
