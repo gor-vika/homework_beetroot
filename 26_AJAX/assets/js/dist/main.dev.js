@@ -102,7 +102,6 @@ function addToFav(info) {
 
   localStorage.setItem('fav_list', JSON.stringify(favList));
   showFavMovies();
-  toast.success('added to favorite');
 }
 
 function movieHTML(item) {
