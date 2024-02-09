@@ -31,7 +31,7 @@ function searchMovies(search) {
           if (json.Response === 'True') {
             list = '';
             json.Search.forEach(function (item) {
-              list += "\n            <div class=\"card\">\n                <img src=\"".concat(item.Poster, "\" class=\"card-img-top\" alt=\"").concat(item.Title, "\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">").concat(item.Title, "</h5>\n                    <p class=\"card-text\"><b>Year:</b> ").concat(item.Year, "</p>\n                    <button class=\"btn btn-primary btn-detail\" data-id=\"").concat(item.imdbID, "\">Detail</button>\n                </div>\n            </div>");
+              list += movieHTML(item);
             });
             document.getElementById('movies-list').innerHTML = list;
           } else {
@@ -49,6 +49,10 @@ function searchMovies(search) {
 document.addEventListener('click', function (event) {
   if (event.target.classList.contains('btn-detail')) {
     getDetalMovie(event.target.dataset.id);
+  }
+
+  if (event.target.classList.contains('btn-fav')) {
+    addToFav(event.target.dataset.info);
   }
 });
 
@@ -77,3 +81,41 @@ function getDetalMovie(id) {
     }
   });
 }
+
+function addToFav(info) {
+  var filmData = JSON.parse(info); // const rez = localStorage.getItem('fav_list');
+  // let favList = [];
+  // if (rez) {
+  //     favList = JSON.parse(rez);
+  // }
+
+  var favList = JSON.parse(localStorage.getItem('fav_list')) || [];
+  var issetIndex = favList.findIndex(function (el) {
+    return el.imdbID === filmData.imdbID;
+  });
+
+  if (issetIndex !== -1) {
+    favList.splice(issetIndex, 1);
+  } else {
+    favList.push(filmData);
+  }
+
+  localStorage.setItem('fav_list', JSON.stringify(favList));
+  showFavMovies();
+  toast.success('added to favorite');
+}
+
+function movieHTML(item) {
+  return "<div class=\"card\">\n            <img src=\"".concat(item.Poster, "\" class=\"card-img-top\" alt=\"").concat(item.Title, "\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">").concat(item.Title, "</h5>\n                <p class=\"card-text\"><b>Year:</b> ").concat(item.Year, "</p>\n                <button class=\"btn btn-primary btn-detail\" data-id=\"").concat(item.imdbID, "\">Detail</button>\n                <button class=\"btn btn-warning btn-fav\" data-info='").concat(JSON.stringify(item), "'>Add to favorite</button>\n            </div>\n        </div>");
+}
+
+function showFavMovies() {
+  var favList = JSON.parse(localStorage.getItem('fav_list')) || [];
+  var list = "";
+  favList.forEach(function (item) {
+    list += movieHTML(item);
+  });
+  document.getElementById('fav-movies').innerHTML = list;
+}
+
+showFavMovies();
