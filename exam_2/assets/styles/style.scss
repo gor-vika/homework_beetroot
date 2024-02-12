@@ -129,6 +129,7 @@ nav{
     left: 50%;
     transform: translate(-50%, -54%);
     color: $white-text;
+    text-align: center;
     .title-hero{
         font-family: 'Montserrat Bold', sans-serif;
         font-size: 5rem;
@@ -634,6 +635,9 @@ footer{
 }
 .form-button.btn-block{
     margin-bottom: 0;
+}
+.is-invalid{
+    border-bottom-color: red;
 }
 
   

@@ -1,13 +1,16 @@
 const toast = {
     timeoutID: null,
     styles: {
+        width: '100%',
+        height: '60px',
         position: 'fixed',
-        left: '20px',
-        top: '20px',
+        left: '0',
+        top: '80px',
         'border-radius': '10px',
         padding: '15px',
         color: '#fff',
-        'z-index': '1'
+        'z-index': '1000',
+        'text-align': 'center'
     },
     success: function (text){
         this.show(text, 'success')

@@ -12,6 +12,7 @@
   "author": "Viktoriia Horbatenko",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^3.0.2",
     "gulp": "^4.0.2"
   }
 }

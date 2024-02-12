@@ -5,7 +5,7 @@ $(function(){
         verticalHeight: 800,
         slideMargin: 0,
         controls: false,
-        // auto: true,
+        auto: true,
         loop: true,
 
     }); 
@@ -135,6 +135,110 @@ function initMap(link){
     L.marker([40.66763414583054, -73.92223675289303], {icon: customMarker}).addTo(map)
         .bindPopup('MONTICELLO<br>INTERNATIONAL GROUP')
 }
+
+$(document).ready(function() {
+    const form = $('#contacts-form');
+
+    function isValidEmail(email) {
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return regex.test(email);
+    }
+
+    $(document).on('focus', function(e) {
+        if ($(e.target).hasClass('input')) {
+            if ($(e.target).hasClass('is-active')) {
+                $(e.target).removeClass('is-active');
+            }
+        }
+    });
+
+    form.on('submit', function(e) {
+        e.preventDefault();
+        const errors = [];
+
+        const nameField = $('#name');
+        const emailField = $('#email');
+
+        const name = nameField.val().trim();
+        const email = emailField.val().trim();
+
+        if (name === '') {
+            errors.push('Enter your name');
+            nameField.addClass('is-invalid');
+        } else {
+            if (name.length < 2) {
+                errors.push('Your name is too short');
+                nameField.addClass('is-invalid');
+            }
+        }
+        if (email === '') {
+            errors.push('Enter your email');
+            emailField.addClass('is-invalid');
+        } else {
+            if (!isValidEmail(email)) {
+                errors.push('Incorrect email address');
+                emailField.addClass('is-invalid');
+            }
+        }
+        if (errors.length) {
+            toast.error(errors.join(', '));
+        }
+
+        // const message = `<b>Name: </b>${name}\r\n<b>Email: </b>${email}`
+        // const CHAT_ID = '305610668';
+        // const BOT_TOKEN = '6599006475:AAFuqFX3zqhxYY3hWzMD0PP9PpHhSW6K5Q4';
+
+        // var url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURI(message)}&parse_mode=HTML`;
+
+        // fetch(url, {
+        //     method: 'post'
+        // })
+        //     .then(resp => resp.json())
+        //     .then(resp => {
+        //         if (resp.ok){
+        //             nameField.value = '';
+        //             emailField.value = '';
+        //             toast.success('Your message succefulle sent')
+        //         } else {
+        //             toast.error('Some error occured')
+        //         }
+        //     })
+
+        const message = `<b>Name: </b>${name}\r\n<b>Email: </b>${email}`;
+        const CHAT_ID = '-4164940018';
+        const BOT_TOKEN = '6599006475:AAFuqFX3zqhxYY3hWzMD0PP9PpHhSW6K5Q4';
+
+        var url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+        $.ajax({
+            url: url,
+            method: 'POST',
+            data: {
+                chat_id: CHAT_ID,
+                text: message,
+                parse_mode: 'HTML'
+            },
+            success: function(resp) {
+                if (resp.ok) {
+                    nameField.val('');
+                    emailField.val('');
+                    toast.success('Your message successfully sent');
+                } else {
+                    toast.error('Some error occurred');
+                }
+            },
+            error: function() {
+                toast.error('Failed to send message');
+            }
+        });
+
+
+        return false;
+    });
+});
+
+
+
 
 
     
