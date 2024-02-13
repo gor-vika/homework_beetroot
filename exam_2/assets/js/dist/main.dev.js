@@ -133,78 +133,69 @@ function initMap(link) {
   }).addTo(map).bindPopup('MONTICELLO<br>INTERNATIONAL GROUP');
 }
 
-$(document).ready(function () {
-  var form = $('#contacts-form');
+var form = document.getElementById('contacts-form');
 
-  function isValidEmail(email) {
-    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    return regex.test(email);
+function isValidEmail(email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
+
+document.addEventListener('focus', function (e) {
+  if (e.target.classList.contains('input')) {
+    if (e.target.classList.contains('is-active')) {
+      e.target.classList.remove('is-active');
+    }
+  }
+});
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  var errors = [];
+  var nameField = document.getElementById('name');
+  var emailField = document.getElementById('email');
+  var name = nameField.value.trim();
+  var email = emailField.value.trim();
+
+  if (name === '') {
+    errors.push('Enter your name');
+    nameField.classList.add('is-invalid');
+  } else {
+    if (name.length < 2) {
+      errors.push('Your name is to short');
+      nameField.classList.add('is-invalid');
+    }
   }
 
-  $(document).on('focus', function (e) {
-    if ($(e.target).hasClass('input')) {
-      if ($(e.target).hasClass('is-active')) {
-        $(e.target).removeClass('is-active');
-      }
+  if (email === '') {
+    errors.push('Enter your email');
+    emailField.classList.add('is-invalid');
+  } else {
+    if (!isValidEmail(email)) {
+      errors.push('Incorrect email adress');
+      emailField.classList.add('is-invalid');
+    }
+  }
+
+  if (errors.length) {
+    toast.error(errors.join(', '));
+    return;
+  }
+
+  var message = "<b>Name: </b>".concat(name, "\r\n<b>Email: </b>").concat(email);
+  var CHAT_ID = '-4164940018';
+  var BOT_TOKEN = '6599006475:AAFuqFX3zqhxYY3hWzMD0PP9PpHhSW6K5Q4';
+  var url = "https://api.telegram.org/bot".concat(BOT_TOKEN, "/sendMessage?chat_id=").concat(CHAT_ID, "&text=").concat(encodeURI(message), "&parse_mode=HTML");
+  fetch(url, {
+    method: 'post'
+  }).then(function (resp) {
+    return resp.json();
+  }).then(function (resp) {
+    if (resp.ok) {
+      nameField.value = '';
+      emailField.value = '';
+      toast.success('Your message succefulle sent');
+    } else {
+      toast.error('Some error occured');
     }
   });
-  form.on('submit', function (e) {
-    e.preventDefault();
-    var errors = [];
-    var nameField = $('#name');
-    var emailField = $('#email');
-    var name = nameField.val().trim();
-    var email = emailField.val().trim();
-
-    if (name === '') {
-      errors.push('Enter your name');
-      nameField.addClass('is-invalid');
-    } else {
-      if (name.length < 2) {
-        errors.push('Your name is too short');
-        nameField.addClass('is-invalid');
-      }
-    }
-
-    if (email === '') {
-      errors.push('Enter your email');
-      emailField.addClass('is-invalid');
-    } else {
-      if (!isValidEmail(email)) {
-        errors.push('Incorrect email address');
-        emailField.addClass('is-invalid');
-      }
-    }
-
-    if (errors.length) {
-      toast.error(errors.join(', '));
-    }
-
-    var message = "<b>Name: </b>".concat(name, "\r\n<b>Email: </b>").concat(email);
-    var CHAT_ID = '-4164940018';
-    var BOT_TOKEN = '6599006475:AAFuqFX3zqhxYY3hWzMD0PP9PpHhSW6K5Q4';
-    var url = "https://api.telegram.org/bot".concat(BOT_TOKEN, "/sendMessage");
-    $.ajax({
-      url: url,
-      method: 'POST',
-      data: {
-        chat_id: CHAT_ID,
-        text: message,
-        parse_mode: 'HTML'
-      },
-      success: function success(resp) {
-        if (resp.ok) {
-          nameField.val('');
-          emailField.val('');
-          toast.success('Your message successfully sent');
-        } else {
-          toast.error('Some error occurred');
-        }
-      },
-      error: function error() {
-        toast.error('Failed to send message');
-      }
-    });
-    return false;
-  });
+  return false;
 });

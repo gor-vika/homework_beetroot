@@ -136,90 +136,75 @@ function initMap(link){
         .bindPopup('MONTICELLO<br>INTERNATIONAL GROUP')
 }
 
-$(document).ready(function() {
-    const form = $('#contacts-form');
+const form = document.getElementById('contacts-form')
 
-    function isValidEmail(email) {
-        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-        return regex.test(email);
+function isValidEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+}
+document.addEventListener('focus', function(e){
+    if (e.target.classList.contains('input')){
+        if (e.target.classList.contains('is-active')){
+            e.target.classList.remove('is-active')
+        }
+    }
+})
+
+form.addEventListener('submit', function(e){
+    e.preventDefault()
+    const errors = [];
+
+    const nameField = document.getElementById('name');
+    const emailField = document.getElementById('email');
+
+    const name = nameField.value.trim();
+    const email = emailField.value.trim();
+
+    if (name === ''){
+        errors.push('Enter your name')
+        nameField.classList.add('is-invalid')
+    } else {
+        if (name.length < 2){
+            errors.push('Your name is to short')
+            nameField.classList.add('is-invalid')
+        }
+    }
+    if (email === ''){
+        errors.push('Enter your email')
+        emailField.classList.add('is-invalid')
+    } else {
+        if (!isValidEmail(email)){
+            errors.push('Incorrect email adress')
+            emailField.classList.add('is-invalid')
+        }
+    }
+    if (errors.length){
+        toast.error(errors.join(', '))
+        return
     }
 
-    $(document).on('focus', function(e) {
-        if ($(e.target).hasClass('input')) {
-            if ($(e.target).hasClass('is-active')) {
-                $(e.target).removeClass('is-active');
-            }
-        }
-    });
-
-    form.on('submit', function(e) {
-        e.preventDefault();
-        const errors = [];
-
-        const nameField = $('#name');
-        const emailField = $('#email');
-
-        const name = nameField.val().trim();
-        const email = emailField.val().trim();
-
-        if (name === '') {
-            errors.push('Enter your name');
-            nameField.addClass('is-invalid');
-        } else {
-            if (name.length < 2) {
-                errors.push('Your name is too short');
-                nameField.addClass('is-invalid');
-            }
-        }
-        if (email === '') {
-            errors.push('Enter your email');
-            emailField.addClass('is-invalid');
-        } else {
-            if (!isValidEmail(email)) {
-                errors.push('Incorrect email address');
-                emailField.addClass('is-invalid');
-            }
-        }
-        if (errors.length) {
-            toast.error(errors.join(', '));
-        }
-
-        const message = `<b>Name: </b>${name}\r\n<b>Email: </b>${email}`;
+    const message = `<b>Name: </b>${name}\r\n<b>Email: </b>${email}`
         const CHAT_ID = '-4164940018';
         const BOT_TOKEN = '6599006475:AAFuqFX3zqhxYY3hWzMD0PP9PpHhSW6K5Q4';
 
-        var url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+        var url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURI(message)}&parse_mode=HTML`;
 
-        $.ajax({
-            url: url,
-            method: 'POST',
-            data: {
-                chat_id: CHAT_ID,
-                text: message,
-                parse_mode: 'HTML'
-            },
-            success: function(resp) {
-                if (resp.ok) {
-                    nameField.val('');
-                    emailField.val('');
-                    toast.success('Your message successfully sent');
+        fetch(url, {
+            method: 'post'
+        })
+            .then(resp => resp.json())
+            .then(resp => {
+                if (resp.ok){
+                    nameField.value = '';
+                    emailField.value = '';
+                    toast.success('Your message succefulle sent')
                 } else {
-                    toast.error('Some error occurred');
+                    toast.error('Some error occured')
                 }
-            },
-            error: function() {
-                toast.error('Failed to send message');
-            }
-        });
+            })
 
-
-        return false;
-    });
-});
-
-
-
-
+    return false
+})
 
     
 
