@@ -1,3 +1,5 @@
+var lazyLoadInstance = new LazyLoad({
+});
 $(function(){
     $('#lightSlider').lightSlider({
         item: 1,
@@ -7,9 +9,26 @@ $(function(){
         controls: false,
         auto: true,
         loop: true,
-
+        responsive: [
+            {
+                breakpoint: 500,
+                settings: {
+                    pager: false 
+                }
+            }
+        ]
     }); 
 })
+
+
+document.getElementById('hamb-btn').addEventListener('click', function(){
+document.body.classList.toggle('open-mobile-menu')
+document.getElementById('hamb-btn').classList.toggle('is-active')})
+
+document.getElementById('hamb-btn-mobile').addEventListener('click', function(){
+document.body.classList.toggle('open-mobile-menu')
+document.getElementById('hamb-btn').classList.toggle('is-active')})
+
 
 $(window).on("scroll", function(){
     if ($(this).scrollTop() >= 200){
@@ -53,25 +72,25 @@ $(async function(){
         margin: 30,
         navText: [`<button type="button" class="owl-arrow owl-prev"></button>`, `<button type="button" class=" owl-arrow owl-next">
         </button>`],
-        // responsiveClass:true,
-        // responsive : {
-        //     0:{
-        //         items: 2,
-        //         dots: true,
-        //         dotsEach: 3
-        //     },
-        //     425: {
-        //         items: 2,
-        //         dots: true,
-        //         dotsEach: 3
-        //     },
-        //     768: {
-        //         items: 3
-        //     },
-        //     1024: {margin: 10,
-        //         items: 3
-        //     }
-        // }
+        responsiveClass:true,
+        responsive : {
+            0:{
+                items: 1,
+                nav: false
+            },
+            600: {
+                items: 1,
+                nav: false
+            },
+            800: {
+                items: 2,
+                
+            },
+            1120: {
+                margin: 20,
+                items: 3
+            }
+        }
     });
 })
 

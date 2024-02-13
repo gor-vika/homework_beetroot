@@ -18,18 +18,21 @@ a, button{
 .container{
     width: min(90%, 1170px);
     margin: 0 auto;
-    // @media screen and (max-width: 1170px){
-    //     width: min(95%, 960px);
-    // }
-    // @media screen and (max-width: 950px){
-    //     width: min(90%, 720px);
-    // }
-    // @media screen and (max-width: 600px){
-    //     width: min(90%, 540px);
-    // }
-    // @media screen and (max-width: 520px){
-    //     width: min(90%, 350px);
-    // }
+    @media screen and (max-width: 1300px){
+        width: min(95%, 1000px);
+    }
+    @media screen and (max-width: 1120px){
+        width: min(90%, 800px);
+    }
+    @media screen and (max-width: 930px){
+        width: min(90%, 600px);
+    }
+    @media screen and (max-width: 730px){
+        width: min(90%, 450px);
+    }
+    @media screen and (max-width: 500px){
+        width: min(90%, 350px);
+    }
 }
 
 body{
@@ -37,10 +40,6 @@ body{
     font-size: 1.12rem;
     line-height: 1.66667;
     color: #2c4058;;
-    // @media screen and (max-width: 520px){
-    //    font-size: 1.125rem;
-    // }
-    
 }
 .page-wrapper{
     display: flex;
@@ -50,6 +49,6 @@ body{
     
 }
 main{
-    flex-grow: 1;  //щоб main розтягнувся на все вільне місце по висоті
+    flex-grow: 1; 
     
 }
