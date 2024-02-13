@@ -178,24 +178,7 @@ $(document).ready(function () {
 
     if (errors.length) {
       toast.error(errors.join(', '));
-    } // const message = `<b>Name: </b>${name}\r\n<b>Email: </b>${email}`
-    // const CHAT_ID = '305610668';
-    // const BOT_TOKEN = '6599006475:AAFuqFX3zqhxYY3hWzMD0PP9PpHhSW6K5Q4';
-    // var url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURI(message)}&parse_mode=HTML`;
-    // fetch(url, {
-    //     method: 'post'
-    // })
-    //     .then(resp => resp.json())
-    //     .then(resp => {
-    //         if (resp.ok){
-    //             nameField.value = '';
-    //             emailField.value = '';
-    //             toast.success('Your message succefulle sent')
-    //         } else {
-    //             toast.error('Some error occured')
-    //         }
-    //     })
-
+    }
 
     var message = "<b>Name: </b>".concat(name, "\r\n<b>Email: </b>").concat(email);
     var CHAT_ID = '-4164940018';
