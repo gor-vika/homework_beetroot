@@ -29,6 +29,13 @@ document.getElementById('hamb-btn-mobile').addEventListener('click', function(){
 document.body.classList.toggle('open-mobile-menu')
 document.getElementById('hamb-btn').classList.toggle('is-active')})
 
+document.querySelectorAll('.mobile-menu-item').forEach(function(item) {
+    item.addEventListener('click', function() {
+        document.body.classList.toggle('open-mobile-menu');
+        document.getElementById('hamb-btn').classList.toggle('is-active'); 
+    })
+})
+
 
 $(window).on("scroll", function(){
     if ($(this).scrollTop() >= 200){
@@ -128,6 +135,7 @@ lightGallery(document.getElementById('gallery_container'), {
     selector: '.gallery_item',
     mode: 'lg-slide',
     cssEasing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+    plugins: [lgThumbnail],
     thumbnail: true,
     subHtmlSelectorRelative: true
 });
@@ -168,6 +176,7 @@ document.addEventListener('focus', function(e){
         }
     }
 })
+
 
 form.addEventListener('submit', function(e){
     e.preventDefault()
@@ -224,9 +233,5 @@ form.addEventListener('submit', function(e){
 
     return false
 })
-
-    
-
-    
 
 

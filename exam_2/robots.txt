@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /temp/
+Sitemap: https://gor-vika.github.io/homework_beetroot/exam_2/sitemap.xml
+
+Host: gor-vika.github.io/homework_beetroot/exam_2/
