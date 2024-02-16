@@ -45,7 +45,7 @@ $accent-color: #7C61F4;
 #header{
     width: 100%;
     position: fixed;
-    z-index: 2000;
+    z-index: 900;
     padding: 53px 0;
     transition: all .2s ease;
     .container{
@@ -637,7 +637,7 @@ footer{
     width: 100%;
     bottom: 150%;
     left: 0;
-    z-index:1000;
+    z-index:899;
     background-repeat: no-repeat;
     background-position: center bottom;
     @media screen and (max-width: 930px){
