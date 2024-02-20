@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>React</title>
+    <link rel="stylesheet" href="assets/style/style.min.css">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+    
+      function MyApp() {
+        return <>
+            <Header />
+            <HeroSection />
+            <Main />
+        </>
+      }
+
+      function Header(){
+        return <header className="header">
+                <div className="container">
+                    <div className="logo">
+                        <img src="assets/img/logo.png" alt="logo" />
+                    </div>
+                    <h1 className="title">Beyond Postcards</h1>
+                    <ul className="header-list">
+                        <li>Home</li>
+                        <li>Blog</li>
+                        <li>News</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
+            </header>
+      }
+
+      function HeroSection(){
+        return <section className="hero-section">
+                </section>
+      }
+
+      function Main(){
+        return <main className="main">
+                    <div className="container">
+                        <div className="section-wrapper">
+                            <h2 className="subtitle">Blog</h2>
+                            <SectionMain 
+                                title="10 Must-Visit Destinations for Adventure Seekers" 
+                                description="From mountain ranges to tropical jungles, discover ten thrilling places you simply must visit if you love active getaways and adrenaline-pumping adventures." 
+                            />
+                            <SectionMain 
+                                title="A Culinary Journey: Exploring the Flavors of Asia" 
+                                description="Get ready to explore the most mouthwatering dishes of Asia, from succulent noodles to exquisite sushi. Embark on a culinary adventure across the continent of flavors!" 
+                            />
+                            <SectionMain 
+                                title="Hidden Gems: Uncovering Europe's Lesser-Known Treasures" 
+                                description="Break away from tourist spots and delve into the discovery of Europe's hidden cultural and natural treasures waiting to be explored." 
+                            />
+                            <SectionMain 
+                                title="Solo Travel: Embracing the Journey of Self-Discovery" 
+                                description="Explore the world solo and uncover new horizons while discovering yourself. Learn why traveling alone can be the most exhilarating experience of your life." 
+                            />
+                        </div>
+                        <Sidebar />
+                    </div>
+                </main>
+
+      }
+
+      function SectionMain({title, description}){
+        return <section className="section-main">
+            <h3 className="blog-title">{title}</h3>
+            <p className="blog-desc">{description}</p>
+            </section>
+      }
+      function Sidebar(){
+        return <sidebar className="sidebar">
+            <h2 className="subtitle">News</h2>
+                    <div className="news-item">
+                        <News 
+                            title="New Orchid Species Discovered in Amazon"
+                            description="Researchers find a vibrant pink orchid, 'Amazonia Elegans', in the depths of the Amazon rainforest, underscoring the region's biodiversity."
+                            author="Sarah Johnson"
+                            date="February 15, 2024"
+                        />
+                    </div>
+                    <div className="news-item">
+                        <News 
+                            title="Global Initiative Targets Ocean Plastic Pollution"
+                            description="World leaders launch 'Ocean Cleanse 2024' to combat ocean plastic pollution, uniting governments, NGOs, and businesses in a bid for cleaner seas."
+                            author="Michael Thompson"
+                            date="February 17, 2024"
+                        />
+                    </div>
+                    <div className="news-item">
+                        <News 
+                            title="Promising Alzheimer's Treatment Shows Potential"
+                            description="Study in 'Science' unveils a new compound with potential to reverse Alzheimer's cognitive decline, offering hope in the fight against the disease."
+                            author="Dr. Emily Roberts"
+                            date="February 16, 2024"
+                        />
+                    </div>
+            </sidebar>
+      }
+      function News({title, description, author, date}){
+        return <>
+                <h4 className="news-title">{title}</h4>
+                <p className="news-desc">{description}</p>
+                <div className="news-author">{author}</div>
+                <small>{date}</small>
+            </>
+      }
+
+
+      const container = document.getElementById('root');
+      const root = ReactDOM.createRoot(container);
+      root.render(<MyApp />);
+
+    </script>
+   
+  </body>
+</html>
