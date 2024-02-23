@@ -1,0 +1,57 @@
+[
+    {
+      "name": "lisbon",
+      "temp": 21,
+      "icon": "day-sunny"  
+    },
+    {
+        "name": "Paris",
+        "temp": 11,
+        "icon": "night-showers"  
+      },
+      {
+        "name": "Belgrad",
+        "temp": 15,
+        "icon": "day-cloudy"  
+      },
+      {
+        "name": "Venice",
+        "temp": 21,
+        "icon": "day-cloudy-high"  
+      },
+      {
+        "name": "Tel-Avive",
+        "temp": 32,
+        "icon": "hot"  
+      },
+      {
+        "name": "Cair",
+        "temp": 21,
+        "icon": "day-sunny"  
+      },
+      {
+        "name": "New-York",
+        "temp": 17,
+        "icon": "day-sleet-storm"  
+      },
+      {
+        "name": "New-Delhi",
+        "temp": 17,
+        "icon": "rain-wind"  
+      },
+      {
+        "name": "San-Francisco",
+        "temp": 15,
+        "icon": "day-sunny-overcast"  
+      },
+      {
+        "name": "Tokyo",
+        "temp": 8,
+        "icon": "night-clear"  
+      },
+      {
+        "name": "Sydney",
+        "temp": 25,
+        "icon": "night-partly-cloudy"  
+      }
+]
