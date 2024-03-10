@@ -2,6 +2,8 @@
 
 var _Circle = _interopRequireDefault(require("../classes/Circle.js"));
 
+var _Marker = _interopRequireDefault(require("../classes/Marker.js"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -45,5 +47,25 @@ document.addEventListener('DOMContentLoaded', function () {
       result = "\u0414\u043E\u0432\u0436\u0438\u043D\u0430 = ".concat(length);
       resultContainer.innerHTML = result;
     };
+  });
+});
+document.addEventListener('DOMContentLoaded', function () {
+  var fillPercentInput = document.getElementById('fill_percent');
+  var writeMarkerButton = document.getElementById('writeMarker');
+  var userInput = document.getElementById('userInput'); // const resultContainer = document.getElementById('result_marker');
+
+  var marker = new _Marker["default"]('black', fillPercentInput.value);
+  userInput.addEventListener('input', function () {
+    var highlightedText = marker.write(userInput.value);
+    userInput.value = highlightedText;
+  }); // Слухач події click для кнопки "Показати маркер"
+
+  writeMarkerButton.addEventListener('click', function () {
+    // Оновлення кількості чорнила у маркері на основі значення поля вводу
+    marker = new _Marker["default"]('yellow', fillPercentInput.value); // Виклик методу write маркера з поточним текстом поля вводу
+
+    var highlightedText = marker.write(userInput.value); // Відображення виділеного тексту у відповідному контейнері
+
+    userInput.value = highlightedText;
   });
 });

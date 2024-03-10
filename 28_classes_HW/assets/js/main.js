@@ -1,4 +1,5 @@
 import Circle from "../classes/Circle.js";
+import Marker from "../classes/Marker.js";
 
 document.addEventListener('DOMContentLoaded', function(){
     const radiusValue = document.getElementById('radiusValue');
@@ -43,6 +44,32 @@ document.addEventListener('DOMContentLoaded', function(){
             resultContainer.innerHTML = result;
         };
     });
+})
+
+document.addEventListener('DOMContentLoaded', function(){
+    const fillPercentInput = document.getElementById('fill_percent');
+    const writeMarkerButton = document.getElementById('writeMarker');
+    const userInput = document.getElementById('userInput');
+    // const resultContainer = document.getElementById('result_marker');
+
+    let marker = new Marker('black', fillPercentInput.value);
+
+    userInput.addEventListener('input', function(){
+        const highlightedText = marker.write(userInput.value);
+        userInput.value = highlightedText;
+    });
+
+    // Слухач події click для кнопки "Показати маркер"
+    writeMarkerButton.addEventListener('click', function() {
+        // Оновлення кількості чорнила у маркері на основі значення поля вводу
+        marker = new Marker('yellow', fillPercentInput.value);
+        // Виклик методу write маркера з поточним текстом поля вводу
+        const highlightedText = marker.write(userInput.value);
+        // Відображення виділеного тексту у відповідному контейнері
+        userInput.value = highlightedText;
+    });
+    
+    
 })
 
 

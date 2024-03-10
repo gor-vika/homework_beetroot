@@ -3,8 +3,9 @@ var lazyLoadInstance = new LazyLoad({
 $(function(){
     $('#lightSlider').lightSlider({
         item: 1,
-        vertical: true,
-        verticalHeight: 800,
+        // vertical: true,
+        // verticalHeight: 800,
+        mode: 'fade',
         slideMargin: 0,
         controls: false,
         auto: true,
@@ -36,6 +37,11 @@ document.querySelectorAll('.mobile-menu-item').forEach(function(item) {
     })
 })
 
+if ($(this).scrollTop() >= 150){
+    if (!$("#header").hasClass("scrolled")){
+        $("#header").addClass("scrolled")
+    } 
+}
 
 $(window).on("scroll", function(){
     if ($(this).scrollTop() >= 200){

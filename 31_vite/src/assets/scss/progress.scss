@@ -1,0 +1,7 @@
+.progress{
+    background: linear-gradient(to right, red, yellow, green);
+    justify-content: flex-end;
+    .progress-bar{
+        background-color: #eee;
+    }
+}

@@ -39,13 +39,14 @@ body{
     font-family: 'Open Sans Regular', sans-serif;
     font-size: 1.12rem;
     line-height: 1.66667;
-    color: #2c4058;;
+    color: #2c4058;
+    height: 100%;
 }
 .page-wrapper{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 100vh;
+    // min-height: 100vh;
     
 }
 main{

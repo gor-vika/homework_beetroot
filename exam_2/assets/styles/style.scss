@@ -8,15 +8,19 @@ $accent-color: #7C61F4;
 //------HERO SECTION------//
 .hero-section{
     position: relative;
+    
 }
 #lightSlider{
     color: $white-text;
     width: 100%;
     .hero-slider{  
-        aspect-ratio: 1600/800;
+        // aspect-ratio: 1600/800;
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
+        background-position: center center;
+        height: 100vh;
+        min-height: 600px;
     }
 }
 .lSSlideOuter .lSPager.lSpg{
@@ -27,6 +31,7 @@ $accent-color: #7C61F4;
     right: 52px;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 10;
     >li {
         &.active,
         &:hover{
@@ -42,9 +47,12 @@ $accent-color: #7C61F4;
         }
     }
 }
+
 #header{
     width: 100%;
     position: fixed;
+    left: 0;
+    top: 0;
     z-index: 900;
     padding: 53px 0;
     transition: all .2s ease;
@@ -61,15 +69,20 @@ $accent-color: #7C61F4;
             backdrop-filter: blur(2px);
 }
 nav{
-    width: 44%;
+    // width: 44%;
     .nav-list{
         display: flex;
-        justify-content: space-between;
+        // justify-content: space-between;
+        align-items: center;
+        justify-content: center;
+        gap: 70px;
         @media screen and (max-width: 1120px){
             display: none;
         }
         .nav-item{
             display: inline-block;
+            position: relative;
+            padding-left: 23px;
             &:hover{
                 &::before{
                     background-color: $white-text;
@@ -80,6 +93,7 @@ nav{
                 color: $white-text;
                 font-family: 'Source Sans Pro', sans-serif;
                 font-size: 0.88rem;
+                
             }
             &::before{
                 content: '';
@@ -89,7 +103,11 @@ nav{
                 background-color: transparent;
                 border: 1px solid $white-text;
                 border-radius: 50%; 
-                margin-right: 14px;
+                // margin-right: 14px;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
                 
             }
     
@@ -98,27 +116,32 @@ nav{
 }
 .social-list{
     display: flex;
+    align-items: center;
+    justify-content: flex-end;
     gap: 20px;
     @media screen and (max-width: 730px){
         display: none;
     }
     .social-item{
-        width: 40px;
-        height: 40px;
-        border-radius: 100%;
-        border: 1px solid $white-text;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        svg{
-            fill: $white-text;
-        }
-        &:hover{
-            background-color: $white-text;
+        a{
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            border: 1px solid $white-text;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             svg{
-                fill: $accent-color;
+                fill: $white-text;
             }
-        }
+            &:hover{
+                background-color: $white-text;
+                svg{
+                    fill: $accent-color;
+                }
+            }
+        }  
 
     }
 }
@@ -129,16 +152,17 @@ nav{
     transform: translate(-50%, -54%);
     color: $white-text;
     text-align: center;
+    z-index: 10;
     .title-hero{
         font-family: 'Montserrat Bold', sans-serif;
-        font-size: 5rem;
+        // font-size: 5rem;
+        font-size: clamp(3rem, 5vw, 5rem);
         letter-spacing: 0.1em;
         @media screen and (max-width: 930px){
-            font-size: 3.5rem;
             margin-bottom: 40px;
         }
         @media screen and (max-width: 500px){
-            font-size: 3rem;
+
             line-height: 1;
         }
     }
@@ -156,7 +180,7 @@ nav{
 .arrow{
     height: 40px;
     width: 40px;
-    border-radius: 100%;
+    border-radius: 50%;
     border: 1px solid $white-text;
     position: absolute;
     bottom: 50px;
@@ -165,6 +189,7 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 10;
     svg{
         fill: $white-text;
     }
@@ -264,10 +289,11 @@ nav{
         margin-bottom: 30px;
     }
     .img1-projects{
-        box-shadow: -215px -57px 0px rgba(85, 183, 255, 1);
+        box-shadow: -15vw -57px 0px rgba(85, 183, 255, 1);
+      
     }
     .img2-projects{
-        box-shadow: 215px -57px rgba(126, 90, 255, 1);
+        box-shadow: 15vw -57px rgba(126, 90, 255, 1);
     }
 }
 .sect-text-block{
